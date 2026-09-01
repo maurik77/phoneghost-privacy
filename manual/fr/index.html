@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PhoneGhost — Manuel d'utilisation</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 800px; margin: 0 auto; padding: 1.5rem; color: #1a1a1a; background: #fff; line-height: 1.6; }
+  nav.langs { margin-bottom: 2rem; padding: 0.75rem 1rem; background: #f5f5f5; border-radius: 6px; font-size: 0.9rem; }
+  nav.langs a { margin-right: 0.75rem; text-decoration: none; color: #0066cc; }
+  nav.langs a:hover { text-decoration: underline; }
+  nav.langs a.current { font-weight: 700; color: #1a1a1a; pointer-events: none; }
+  h1 { font-size: 1.6rem; margin-bottom: 0.25rem; }
+  h2 { font-size: 1.25rem; margin-top: 2.5rem; border-bottom: 1px solid #e0e0e0; padding-bottom: 0.25rem; }
+  h3 { font-size: 1.05rem; margin-top: 1.75rem; }
+  nav.toc { background: #f9f9f9; border: 1px solid #e0e0e0; border-radius: 6px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+  nav.toc ol { margin: 0.5rem 0 0; padding-left: 1.25rem; }
+  nav.toc li { margin: 0.2rem 0; }
+  nav.toc a { color: #0066cc; text-decoration: none; font-size: 0.95rem; }
+  nav.toc a:hover { text-decoration: underline; }
+  .screenshots { display: flex; flex-wrap: wrap; gap: 12px; margin: 1rem 0; }
+  .screenshots img { width: calc(50% - 6px); max-width: 280px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+  @media (max-width: 500px) { .screenshots img { width: 100%; } }
+  .note { background: #fff8e1; border-left: 3px solid #f9a825; padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  .warn { background: #fff3e0; border-left: 3px solid #e65100; padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+  th, td { border: 1px solid #ddd; padding: 0.5rem 0.75rem; text-align: left; }
+  th { background: #f5f5f5; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0e0e0; font-size: 0.85rem; color: #666; }
+  footer a { color: #0066cc; }
+  a { color: #0066cc; }
+</style>
+</head>
+<body>
+
+<nav class="langs">
+  <strong>Langue :</strong>
+  <a href="../it/">Italiano</a>
+  <a href="../en/">English</a>
+  <a href="../es/">Español</a>
+  <a href="../fr/" class="current">Français</a>
+  <a href="../de/">Deutsch</a>
+  <a href="../pt/">Português</a>
+</nav>
+
+<h1>PhoneGhost — Manuel d'utilisation</h1>
+
+<nav class="toc">
+  <strong>Sommaire</strong>
+  <ol>
+    <li><a href="#1">Ce que c'est</a></li>
+    <li><a href="#2">Premier lancement</a></li>
+    <li><a href="#3">Le répertoire public</a></li>
+    <li><a href="#4">Importer depuis les contacts du téléphone</a></li>
+    <li><a href="#5">Attributs personnalisés</a></li>
+    <li><a href="#6">Les répertoires privés</a></li>
+    <li><a href="#7">Appels et contacts fantômes</a></li>
+    <li><a href="#8">Langues et apparence</a></li>
+    <li><a href="#9">Ce que l'application ne fait pas</a></li>
+  </ol>
+</nav>
+
+<h2 id="1">1. Ce que c'est</h2>
+
+<p>PhoneGhost est un <strong>deuxième répertoire</strong>, séparé de celui du téléphone, qui peut également héberger un ou plusieurs <strong>répertoires privés chiffrés</strong>, chacun protégé par un code que vous choisissez.</p>
+
+<p>Les répertoires privés ne sont pas une fonctionnalité cachée : l'application les déclare ouvertement, dès le premier lancement et dans les boutiques. Ce qui est caché, c'est <strong>combien il en existe et s'il en existe</strong> — et ce n'est pas un détail de présentation, mais le principe sur lequel tout le reste est construit. Il n'y a pas de liste, pas de compteur, pas d'icône qui s'allume. Pas même pour vous.</p>
+
+<h2 id="2">2. Premier lancement</h2>
+
+<p>Cela se produit une seule fois par installation et ne peut pas être ignoré.</p>
+
+<h3 id="2-1">2.1 L'explication</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/fr/01-benvenuto.png" alt="Écran de bienvenue">
+  <img src="../screenshots/fr/02-benvenuto-seguito.png" alt="Explication (suite)">
+</div>
+
+<p>C'est le seul endroit de l'application où le mécanisme est expliqué en entier. Les illustrations disent sans mots ce que les mots expliquent mal : le code d'un répertoire privé tapé dans la recherche ouvre <strong>ce répertoire</strong> ; le code administratif ouvre <strong>un menu</strong>, pas un répertoire.</p>
+
+<p>L'explication reste accessible à tout moment depuis le menu administratif (§6.1) : ce n'est pas un écran qu'on voit une fois et qu'on perd.</p>
+
+<h3 id="2-2">2.2 Préparation de l'archive chiffrée</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/fr/03-preparazione-archivio.png" alt="Préparation à 16 %">
+  <img src="../screenshots/fr/04-preparazione-archivio-avanzata.png" alt="Préparation à 61 %">
+</div>
+
+<p>L'application écrit ici l'espace qui hébergera les répertoires privés — <strong>toujours le même</strong>, que vous en créiez un, dix ou aucun. C'est pourquoi l'attente ne révèle rien sur vous : la barre de progression avance de façon identique à chaque installation.</p>
+
+<p>Cela prend plusieurs dizaines de secondes sur un téléphone de 2019. Le cadenas se remplit en même temps que la barre, et un reflet le traverse lentement : son rôle est de distinguer « je travaille » de « je suis bloqué », ce qui est le seul doute que cet écran existe pour lever.</p>
+
+<h3 id="2-3">2.3 Le code administratif</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/fr/05-codice-amministrativo.png" alt="Choix du code administratif">
+  <img src="../screenshots/fr/06-codice-amministrativo-impostato.png" alt="Confirmation du code administratif">
+</div>
+
+<p>Au moins 8 caractères, avec au moins une lettre et un chiffre.</p>
+
+<div class="warn">
+<strong>Il est permanent et irrécupérable</strong> : il ne peut pas être modifié, réinitialisé ni récupéré via une question de sécurité. Si vous l'oubliez, vous ne pourrez plus créer de nouveaux répertoires privés — ceux déjà créés restent accessibles avec leurs propres codes, qui sont différents de celui-ci.
+</div>
+
+<p>L'écran de confirmation existe pour dire une seule chose — celle que l'on comprend le plus souvent mal : <strong>le code administratif ouvre un menu, pas un répertoire.</strong></p>
+
+<h2 id="3">3. Le répertoire public</h2>
+
+<div class="screenshots">
+  <img src="../screenshots/fr/07-rubrica-vuota.png" alt="Répertoire vide">
+  <img src="../screenshots/fr/10-lista-contatti.png" alt="Liste des contacts">
+  <img src="../screenshots/fr/11-scheda-contatto.png" alt="Fiche contact">
+</div>
+
+<p>Un répertoire ordinaire : liste triée alphabétiquement avec des lettres de section, avatar avec les initiales (la couleur est dérivée du nom, elle n'est pas aléatoire ni choisie manuellement), recherche, fiche, modification, suppression.</p>
+
+<p><strong>La recherche ignore les accents et les majuscules.</strong> En cherchant <code>nicolas</code> vous trouvez <em>Nicolas</em> et <em>Nicolàs</em> : les noms sont comparés en interne sous une forme « normalisée ». Cela s'applique au prénom, au nom de famille et à l'entreprise.</p>
+
+<p><strong>La suppression demande confirmation</strong> via une boîte de dialogue et n'est pas réversible : à l'intérieur d'un répertoire privé, il n'existe pas de copie système depuis laquelle récupérer.</p>
+
+<h3 id="3-1">3.1 Créer et modifier un contact</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/fr/08-nuovo-contatto.png" alt="Éditeur vide">
+  <img src="../screenshots/fr/09-nuovo-contatto-compilato.png" alt="Éditeur rempli">
+</div>
+
+<p>Prénom, nom, entreprise, rôle, <strong>plusieurs numéros de téléphone</strong> et <strong>plusieurs adresses e-mail</strong>, chacun avec sa propre étiquette (mobile, domicile, travail, ou une étiquette personnalisée). « Ajouter un numéro » et « Ajouter un e-mail » créent une ligne supplémentaire.</p>
+
+<p>La <strong>photo</strong> se touche en haut : on la prend avec l'appareil photo ou on la choisit dans la galerie. Elle est redimensionnée et enregistrée chiffrée dans un fichier distinct ; si la permission est refusée, l'application le signale au lieu d'échouer silencieusement.</p>
+
+<div class="note">
+<strong>Limitation connue.</strong> Dans la fiche contact, seul le <strong>premier numéro</strong> est appelable, et rien ne l'indique : appuyer sur le deuxième ne fait rien. C'est un défaut enregistré, pas un comportement intentionnel.
+</div>
+
+<h2 id="4">4. Importer depuis les contacts du téléphone</h2>
+
+<div class="screenshots">
+  <img src="../screenshots/fr/07-rubrica-vuota.png" alt="Invitation à importer sur le répertoire vide">
+  <img src="../screenshots/fr/12-impostazioni.png" alt="Import dans les paramètres">
+</div>
+
+<p>L'importation se trouve en <strong>deux endroits</strong>, répondant à deux besoins différents :</p>
+<ul>
+  <li>au-dessus de la liste, tant qu'aucune importation n'a jamais été tentée — c'est la voie pour ceux qui ouvrent l'application pour la première fois ;</li>
+  <li>dans les <strong>paramètres</strong>, toujours — c'est la voie pour ceux qui veulent la répéter.</li>
+</ul>
+
+<p><strong>Elle peut être répétée autant de fois que vous le souhaitez.</strong> Les contacts déjà présents sont reconnus et ignorés, donc le répertoire ne double pas. La reconnaissance fonctionne ainsi :</p>
+<ul>
+  <li>si le contact du téléphone a au moins un numéro, il est « déjà présent » quand <strong>au moins un de ses numéros</strong> figure déjà dans le répertoire ;</li>
+  <li>s'il n'a pas de numéros utilisables, quand <strong>le nom correspond</strong> (en ignorant les accents et les majuscules).</li>
+</ul>
+
+<p>Le numéro prime sur le nom intentionnellement : deux personnes différentes peuvent avoir le même nom, et la règle inverse en ferait disparaître une silencieusement.</p>
+
+<p><strong>Ignore, ne met pas à jour.</strong> Un contact déjà présent n'est pas écrasé avec les données du téléphone : les modifications faites dans PhoneGhost — étiquettes, attributs personnalisés, alias — restent les vôtres. La conséquence acceptée est que si vous changez le numéro de quelqu'un <em>sur le téléphone</em>, une nouvelle importation l'ajoute comme nouveau contact au lieu de mettre à jour l'existant.</p>
+
+<p>À la fin de l'importation, l'application <strong>indique toujours</strong> ce qui s'est passé, même quand il n'y avait rien à faire (« Aucun nouveau contact à importer »), car une importation qui ne trouve rien et une qui n'a pas démarré seraient sinon le même écran immobile.</p>
+
+<p><strong>L'importation n'existe que sur le répertoire public.</strong> Les répertoires privés n'importent jamais depuis le répertoire système.</p>
+
+<h2 id="5">5. Attributs personnalisés</h2>
+
+<p>Des champs supplémentaires, définis par vous, <strong>différents pour chaque répertoire</strong> : ceux du répertoire public n'existent pas à l'intérieur d'un privé et vice versa.</p>
+
+<h3 id="5-1">5.1 Les définir</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/fr/13-attributi-nessuno.png" alt="Aucun attribut">
+  <img src="../screenshots/fr/14-nuovo-attributo.png" alt="Nouvel attribut">
+  <img src="../screenshots/fr/15-nuovo-attributo-nome.png" alt="Nom de l'attribut">
+  <img src="../screenshots/fr/16-tipi-di-attributo.png" alt="Les quatre types">
+  <img src="../screenshots/fr/17-attributi-definiti.png" alt="Deux attributs définis">
+</div>
+
+<p>Quatre types : <strong>Texte</strong> (jusqu'à 200 caractères), <strong>Texte long</strong>, <strong>Note 1-5</strong> (étoiles) et <strong>Date</strong>.</p>
+
+<p>Les noms doivent être distincts, et la comparaison ignore les accents et les majuscules : « Ville » et « ville » seraient le même attribut, pas deux.</p>
+
+<h3 id="5-2">5.2 En choisir un à afficher dans la liste</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/fr/18-scelta-del-sottotitolo.png" alt="Choix du sous-titre">
+  <img src="../screenshots/fr/22-lista-con-sottotitolo.png" alt="Liste avec sous-titre">
+</div>
+
+<p>Un attribut — un seul — peut devenir le <strong>sous-titre</strong> des lignes du répertoire. Cela permet de rendre la liste lisible quand les noms ne suffisent pas à distinguer les personnes.</p>
+
+<h3 id="5-3">5.3 Les remplir et les voir</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/fr/19-editor-con-attributi.png" alt="Éditeur avec attributs">
+  <img src="../screenshots/fr/20-editor-attributi-compilati.png" alt="Attributs remplis">
+  <img src="../screenshots/fr/21-scheda-con-attributi.png" alt="Fiche avec attributs">
+</div>
+
+<p>Les attributs définis apparaissent en bas de l'éditeur de <strong>chaque</strong> contact de ce répertoire, avec le contrôle adapté au type. Les valeurs remplies sont visibles dans la fiche.</p>
+
+<p>Supprimer un attribut supprime également les valeurs que les contacts avaient pour ce champ, et la confirmation le signale.</p>
+
+<h2 id="6">6. Les répertoires privés</h2>
+
+<h3 id="6-1">6.1 Le menu administratif</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/fr/23-menu-amministrazione.png" alt="Menu administratif">
+</div>
+
+<p>Il s'ouvre en tapant le <strong>code administratif</strong> dans le champ de recherche du répertoire et en appuyant sur Entrée. Il n'y a aucune autre voie : aucun bouton, aucune entrée de menu, aucun geste secret.</p>
+
+<p>Trois entrées : créer un nouveau répertoire privé, relire l'explication du premier lancement, et changer l'icône de l'application — cette dernière annoncée mais <strong>pas encore implémentée</strong>.</p>
+
+<h3 id="6-2">6.2 En créer un</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/fr/24-nuova-rubrica-privata.png" alt="Nouveau répertoire privé">
+  <img src="../screenshots/fr/25-rubrica-privata-creata.png" alt="Répertoire privé créé">
+</div>
+
+<p>Le code que vous choisissez <strong>est</strong> la clé avec laquelle le répertoire est chiffré. Il n'est enregistré nulle part : la clé est dérivée des données stockées, jamais le code lui-même.</p>
+
+<p>Les règles sont les mêmes que pour le code administratif (8+ caractères, au moins une lettre et un chiffre). Si le code n'est pas acceptable, l'application indique seulement « Code non valide » : elle ne dit pas <strong>pourquoi</strong>, et en particulier ne dit jamais « ce code est déjà utilisé » — ce faisant, elle révélerait qu'un autre répertoire existe.</p>
+
+<div class="warn">
+<strong>Le code est irrécupérable.</strong> Il n'y a pas de réinitialisation, pas de récupération du contenu. Le cadenas qui se ferme entre les deux écrans n'est pas décoratif : c'est la seule différence entre « vous devez encore choisir un code » et « le chiffrement a eu lieu ».
+</div>
+
+<h3 id="6-3">6.3 L'ouvrir et l'utiliser</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/fr/26-rubrica-privata-aperta.png" alt="Répertoire privé ouvert">
+  <img src="../screenshots/fr/27-rubrica-privata-con-contatti.png" alt="Répertoire privé avec contacts">
+</div>
+
+<p>Tapez son code dans le champ de recherche et appuyez sur Entrée : le répertoire privé remplace la liste publique. C'est la seule façon.</p>
+
+<p>Le seul signe que vous êtes dans un répertoire privé est le <strong>petit cadenas</strong> à côté du titre — discret à dessein : quelqu'un qui regarde l'écran de loin voit un répertoire.</p>
+
+<p>Tout fonctionne comme dans le répertoire public : contacts, recherche, photos, attributs. Appuyer sur Retour ferme le répertoire et sa base de données.</p>
+
+<p>Deux limitations déclarées :</p>
+<ul>
+  <li><strong>depuis l'intérieur d'un répertoire privé, on ne peut pas en ouvrir un autre</strong> : le champ de recherche là-dedans ne fait que chercher ;</li>
+  <li><strong>l'importation depuis le système n'existe pas</strong> (§4).</li>
+</ul>
+
+<h3 id="6-4">6.4 Paramètres d'un répertoire privé</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/fr/28-impostazioni-rubrica-privata.png" alt="Paramètres du répertoire privé">
+</div>
+
+<p>Le répertoire <strong>public</strong> a l'importation et pas de politique de contact fantôme ; un répertoire <strong>privé</strong> est exactement l'inverse — pas d'importation, mais avec l'option de gestion du contact fantôme (§7).</p>
+
+<h2 id="7">7. Appels et contacts fantômes</h2>
+
+<p>Quand vous appelez un contact d'un répertoire privé, son nom n'existe pas pour le système — il apparaîtrait comme un numéro brut dans Récents. PhoneGhost crée alors, un instant avant de composer, un <strong>contact fantôme</strong> dans le répertoire système avec l'alias que vous avez choisi, afin que le journal des appels affiche un nom.</p>
+
+<p>L'<strong>alias</strong> se configure dans l'éditeur du contact, et le champ n'apparaît <strong>qu'à l'intérieur d'un répertoire privé</strong> : dans le répertoire public, cela n'aurait pas de sens, car les contacts y sont publics.</p>
+
+<p>L'option « Contact fantôme en fin d'appel » (§6.4) décide du sort de ce contact :</p>
+
+<table>
+<tr><th>Option</th><th>Effet</th></tr>
+<tr><td><strong>Conserver le contact</strong> (par défaut)</td><td>Le contact fantôme reste dans le répertoire système et le nom continue d'apparaître dans Récents</td></tr>
+<tr><td><strong>Supprimer le contact</strong></td><td>Le contact fantôme est supprimé immédiatement après l'appel</td></tr>
+</table>
+
+<div class="note">
+<strong>Les deux choix ont un coût.</strong> Mesuré sur un Galaxy S10 avec le composeur Samsung : en supprimant le contact fantôme, le nom dans Récents <strong>disparaît immédiatement</strong> et ne reste que le numéro. Ce composeur n'utilise pas le nom stocké dans le journal, il le résout à chaque fois depuis le répertoire. Donc « Supprimer » signifie vraiment <em>aucune trace dans le répertoire, mais aussi aucun nom dans le journal</em>. C'est pourquoi la valeur par défaut est « Conserver ».
+</div>
+
+<p>Le comportement dépend du composeur : un téléphone différent pourrait se comporter à l'opposé. Le défaut est choisi pour fonctionner dans le pire des cas.</p>
+
+<p>Pour masquer les contacts fantômes dans l'application Contacts du téléphone, décochez le compte <code>it.phoneghost.local</code> dans « Contacts à afficher ».</p>
+
+<h2 id="8">8. Langues et apparence</h2>
+
+<p>L'application parle <strong>six langues</strong> — italien, anglais, espagnol, français, allemand, portugais — et suit la langue du téléphone ; ceux qui ne parlent aucune des six voient l'anglais.</p>
+
+<p>Thème <strong>clair et sombre</strong>, selon le système. Sur iPhone, certains écrans utilisent les contrôles natifs iOS.</p>
+
+<h2 id="9">9. Ce que l'application ne fait pas</h2>
+
+<ul>
+  <li><strong>Elle n'écrit pas dans le journal des appels.</strong> Aucune des deux plateformes ne le permet à une application distribuée sur les boutiques : les contacts fantômes existent précisément pour contourner cette limitation de manière légale.</li>
+  <li><strong>Elle ne peut pas utiliser une photo quelconque comme icône.</strong> Les deux plateformes n'autorisent que le choix parmi des icônes intégrées à l'application lors de la compilation. La fonctionnalité n'est pas encore active.</li>
+  <li><strong>Elle n'a pas de verrouillage par inactivité, de blocage des captures d'écran ni de sortie rapide.</strong> Ils étaient prévus et les contrôles ont été supprimés : les afficher sans les implémenter aurait été une fausse promesse de sécurité.</li>
+  <li><strong>Elle ne synchronise pas et ne fait pas de sauvegarde.</strong> Pas de cloud, pas de compte.</li>
+  <li><strong>Pas de favoris, pas de groupes.</strong></li>
+</ul>
+
+<h3>Les limites de la déniabilité, en entier</h3>
+
+<p>Les répertoires privés cachent <em>quels</em> espaces sont occupés, et le comptage est mélangé avec des espaces leurres. Mais :</p>
+<ul>
+  <li>quelqu'un ayant accès à un appareil <strong>déverrouillé avec des droits root</strong> peut déduire un comptage (gonflé par les leurres) via le trousseau système ;</li>
+  <li>l'<strong>espace occupé par l'application augmente de 64 Ko par photo</strong>, et cela est lisible dans les Paramètres système sans aucun outil. Quelqu'un qui possède une copie des fichiers apprend le <strong>nombre total de photos</strong> dans tous les répertoires — mais pas à quel répertoire appartient chacune, car les noms de fichiers sont aléatoires et tous les fichiers font exactement la même taille.</li>
+</ul>
+
+<p>Ce n'est pas un défaut à corriger : c'est la limite déclarée de ce que le projet promet.</p>
+
+<footer>
+  <a href="https://maurik77.github.io/phoneghost-privacy/">Politique de confidentialité</a> &middot;
+  <a href="../">Toutes les langues</a>
+</footer>
+
+</body>
+</html>

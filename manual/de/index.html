@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PhoneGhost — Benutzerhandbuch</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 800px; margin: 0 auto; padding: 1.5rem; color: #1a1a1a; background: #fff; line-height: 1.6; }
+  nav.langs { margin-bottom: 2rem; padding: 0.75rem 1rem; background: #f5f5f5; border-radius: 6px; font-size: 0.9rem; }
+  nav.langs a { margin-right: 0.75rem; text-decoration: none; color: #0066cc; }
+  nav.langs a:hover { text-decoration: underline; }
+  nav.langs a.current { font-weight: 700; color: #1a1a1a; pointer-events: none; }
+  h1 { font-size: 1.6rem; margin-bottom: 0.25rem; }
+  h2 { font-size: 1.25rem; margin-top: 2.5rem; border-bottom: 1px solid #e0e0e0; padding-bottom: 0.25rem; }
+  h3 { font-size: 1.05rem; margin-top: 1.75rem; }
+  nav.toc { background: #f9f9f9; border: 1px solid #e0e0e0; border-radius: 6px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+  nav.toc ol { margin: 0.5rem 0 0; padding-left: 1.25rem; }
+  nav.toc li { margin: 0.2rem 0; }
+  nav.toc a { color: #0066cc; text-decoration: none; font-size: 0.95rem; }
+  nav.toc a:hover { text-decoration: underline; }
+  .screenshots { display: flex; flex-wrap: wrap; gap: 12px; margin: 1rem 0; }
+  .screenshots img { width: calc(50% - 6px); max-width: 280px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+  @media (max-width: 500px) { .screenshots img { width: 100%; } }
+  .note { background: #fff8e1; border-left: 3px solid #f9a825; padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  .warn { background: #fff3e0; border-left: 3px solid #e65100; padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+  th, td { border: 1px solid #ddd; padding: 0.5rem 0.75rem; text-align: left; }
+  th { background: #f5f5f5; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0e0e0; font-size: 0.85rem; color: #666; }
+  footer a { color: #0066cc; }
+  a { color: #0066cc; }
+</style>
+</head>
+<body>
+
+<nav class="langs">
+  <strong>Sprache:</strong>
+  <a href="../it/">Italiano</a>
+  <a href="../en/">English</a>
+  <a href="../es/">Español</a>
+  <a href="../fr/">Français</a>
+  <a href="../de/" class="current">Deutsch</a>
+  <a href="../pt/">Português</a>
+</nav>
+
+<h1>PhoneGhost — Benutzerhandbuch</h1>
+
+<nav class="toc">
+  <strong>Inhalt</strong>
+  <ol>
+    <li><a href="#1">Was es ist</a></li>
+    <li><a href="#2">Erster Start</a></li>
+    <li><a href="#3">Das öffentliche Adressbuch</a></li>
+    <li><a href="#4">Aus dem Telefonbuch importieren</a></li>
+    <li><a href="#5">Benutzerdefinierte Attribute</a></li>
+    <li><a href="#6">Private Adressbücher</a></li>
+    <li><a href="#7">Anrufe und Ghost-Kontakte</a></li>
+    <li><a href="#8">Sprachen und Erscheinungsbild</a></li>
+    <li><a href="#9">Was die App nicht tut</a></li>
+  </ol>
+</nav>
+
+<h2 id="1">1. Was es ist</h2>
+
+<p>PhoneGhost ist ein <strong>zweites Adressbuch</strong>, das vom Telefonbuch des Geräts getrennt ist und zusätzlich ein oder mehrere <strong>verschlüsselte private Adressbücher</strong> hosten kann, die jeweils durch einen von Ihnen gewählten Code geschützt sind.</p>
+
+<p>Private Adressbücher sind keine versteckte Funktion: Die App gibt sie offen bekannt — beim ersten Start und in den App-Stores. Was verborgen ist, ist <strong>wie viele davon existieren und ob überhaupt welche existieren</strong> — und das ist kein Präsentationsdetail, sondern das Prinzip, auf dem alles andere aufgebaut ist. Es gibt keine Liste, keinen Zähler, kein aufleuchtendes Symbol. Nicht einmal für Sie.</p>
+
+<h2 id="2">2. Erster Start</h2>
+
+<p>Dies geschieht einmal pro Installation und kann nicht übersprungen werden.</p>
+
+<h3 id="2-1">2.1 Die Erklärung</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/de/01-benvenuto.png" alt="Willkommensbildschirm">
+  <img src="../screenshots/de/02-benvenuto-seguito.png" alt="Erklärung (Fortsetzung)">
+</div>
+
+<p>Dies ist der einzige Punkt in der App, an dem der Mechanismus vollständig erklärt wird. Die Illustrationen sagen ohne Worte, was Worte schlecht erklären: Der Code eines privaten Adressbuchs, in das Suchfeld eingegeben, öffnet <strong>dieses Adressbuch</strong>; der Verwaltungscode öffnet <strong>ein Menü</strong>, kein Adressbuch.</p>
+
+<p>Die Erklärung ist jederzeit über das Verwaltungsmenü erreichbar (§6.1): Es handelt sich nicht um einen Bildschirm, den man einmal sieht und dann verliert.</p>
+
+<h3 id="2-2">2.2 Vorbereitung des verschlüsselten Archivs</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/de/03-preparazione-archivio.png" alt="Vorbereitung bei 16 %">
+  <img src="../screenshots/de/04-preparazione-archivio-avanzata.png" alt="Vorbereitung bei 61 %">
+</div>
+
+<p>Die App schreibt hier den Speicherplatz, der die privaten Adressbücher aufnehmen wird — <strong>immer die gleiche Menge</strong>, egal ob Sie eines, zehn oder keines erstellen. Deshalb verrät das Warten nichts über Sie: Der Fortschrittsbalken bewegt sich bei jeder Installation identisch.</p>
+
+<p>Das dauert auf einem Telefon von 2019 mehrere Dutzend Sekunden. Das Schloss füllt sich zusammen mit dem Balken, und ein Reflex zieht langsam hindurch: Er soll unterscheiden, ob die App „noch arbeitet" oder „hängen geblieben ist" — das ist der einzige Zweifel, den dieser Bildschirm ausräumen soll.</p>
+
+<h3 id="2-3">2.3 Der Verwaltungscode</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/de/05-codice-amministrativo.png" alt="Auswahl des Verwaltungscodes">
+  <img src="../screenshots/de/06-codice-amministrativo-impostato.png" alt="Bestätigung des Verwaltungscodes">
+</div>
+
+<p>Mindestens 8 Zeichen, mit mindestens einem Buchstaben und einer Ziffer.</p>
+
+<div class="warn">
+<strong>Er ist dauerhaft und nicht wiederherstellbar</strong>: Er kann nicht geändert, zurückgesetzt oder über eine Sicherheitsfrage abgerufen werden. Falls Sie ihn vergessen, können Sie keine neuen privaten Adressbücher mehr erstellen — bereits erstellte bleiben über ihre eigenen Codes erreichbar, die von diesem verschieden sind.
+</div>
+
+<p>Der Bestätigungsbildschirm existiert, um genau eine Sache zu sagen — die, die am häufigsten missverstanden wird: <strong>Der Verwaltungscode öffnet ein Menü, kein Adressbuch.</strong></p>
+
+<h2 id="3">3. Das öffentliche Adressbuch</h2>
+
+<div class="screenshots">
+  <img src="../screenshots/de/07-rubrica-vuota.png" alt="Leeres Adressbuch">
+  <img src="../screenshots/de/10-lista-contatti.png" alt="Kontaktliste">
+  <img src="../screenshots/de/11-scheda-contatto.png" alt="Kontaktkarte">
+</div>
+
+<p>Ein gewöhnliches Adressbuch: alphabetisch sortierte Liste mit Abschnittsbuchstaben, Initialien-Avatar (Farbe aus dem Namen abgeleitet, weder zufällig noch manuell gewählt), Suche, Kontaktkarte, Bearbeiten, Löschen.</p>
+
+<p><strong>Die Suche ignoriert Akzente und Groß-/Kleinschreibung.</strong> Die Suche nach <code>muller</code> findet <em>Müller</em> und umgekehrt: Intern werden Namen in einer „normalisierten" Form verglichen. Das gilt für Vor-, Nachname und Unternehmen.</p>
+
+<p><strong>Das Löschen erfordert eine Bestätigung</strong> per Dialog und ist nicht rückgängig zu machen: Innerhalb eines privaten Adressbuchs gibt es keine Systemkopie, von der man wiederherstellen könnte.</p>
+
+<h3 id="3-1">3.1 Einen Kontakt erstellen und bearbeiten</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/de/08-nuovo-contatto.png" alt="Leerer Editor">
+  <img src="../screenshots/de/09-nuovo-contatto-compilato.png" alt="Ausgefüllter Editor">
+</div>
+
+<p>Vorname, Nachname, Unternehmen, Funktion, <strong>mehrere Telefonnummern</strong> und <strong>mehrere E-Mail-Adressen</strong>, jeweils mit eigenem Label (Mobil, Zuhause, Arbeit oder ein benutzerdefiniertes). „Nummer hinzufügen" und „E-Mail hinzufügen" erstellen eine zusätzliche Zeile.</p>
+
+<p>Das <strong>Foto</strong> wird oben angetippt: Mit der Kamera aufnehmen oder aus der Galerie wählen. Es wird verkleinert und verschlüsselt in einer eigenen Datei gespeichert; wenn die Berechtigung verweigert wird, teilt die App das mit, statt still zu versagen.</p>
+
+<div class="note">
+<strong>Bekannte Einschränkung.</strong> Auf der Kontaktkarte ist nur die <strong>erste Telefonnummer</strong> anrufbar, und nichts weist darauf hin: Das Antippen einer zweiten Nummer tut nichts. Das ist ein registrierter Defekt, kein beabsichtigtes Verhalten.
+</div>
+
+<h2 id="4">4. Aus dem Telefonbuch importieren</h2>
+
+<div class="screenshots">
+  <img src="../screenshots/de/07-rubrica-vuota.png" alt="Importaufforderung auf leerem Adressbuch">
+  <img src="../screenshots/de/12-impostazioni.png" alt="Import in den Einstellungen">
+</div>
+
+<p>Der Import gibt es an <strong>zwei Stellen</strong>, die auf unterschiedliche Bedürfnisse eingehen:</p>
+<ul>
+  <li>über der Liste, solange noch nie ein Import versucht wurde — für diejenigen, die die App zum ersten Mal öffnen;</li>
+  <li>in den <strong>Einstellungen</strong>, immer — für diejenigen, die ihn wiederholen möchten.</li>
+</ul>
+
+<p><strong>Er kann beliebig oft wiederholt werden.</strong> Bereits vorhandene Kontakte werden erkannt und übersprungen, sodass das Adressbuch sich nicht verdoppelt. Die Erkennung funktioniert so:</p>
+<ul>
+  <li>Hat der Telefonkontakt mindestens eine Nummer, gilt er als „bereits vorhanden", wenn <strong>mindestens eine seiner Nummern</strong> bereits im Adressbuch steht;</li>
+  <li>Hat er keine verwendbaren Nummern, wenn <strong>der Name übereinstimmt</strong> (Akzente und Groß-/Kleinschreibung werden ignoriert).</li>
+</ul>
+
+<p>Die Nummer hat intentionell Vorrang vor dem Namen: Zwei verschiedene Personen können denselben Namen haben, und die umgekehrte Regel würde eine davon stillschweigend verschwinden lassen.</p>
+
+<p><strong>Überspringen, nicht aktualisieren.</strong> Ein bereits vorhandener Kontakt wird nicht mit Telefondaten überschrieben: In PhoneGhost vorgenommene Änderungen — Labels, benutzerdefinierte Attribute, Aliasse — bleiben erhalten. Die akzeptierte Konsequenz: Wenn Sie jemandes Nummer <em>auf dem Telefon</em> ändern, fügt ein neuer Import ihn als neuen Kontakt hinzu, anstatt den vorhandenen zu aktualisieren.</p>
+
+<p>Am Ende eines Imports teilt die App <strong>immer</strong> das Ergebnis mit, auch wenn es nichts zu tun gab („Keine neuen Kontakte zum Importieren"), weil ein Import, der nichts findet, und einer, der nie gestartet ist, sonst identisch aussehen würden.</p>
+
+<p><strong>Der Import existiert nur im öffentlichen Adressbuch.</strong> Private Adressbücher importieren niemals aus dem Systemadressbuch.</p>
+
+<h2 id="5">5. Benutzerdefinierte Attribute</h2>
+
+<p>Zusätzliche Felder, die Sie selbst definieren, <strong>für jedes Adressbuch unterschiedlich</strong>: Die des öffentlichen Adressbuchs existieren nicht innerhalb eines privaten und umgekehrt.</p>
+
+<h3 id="5-1">5.1 Definieren</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/de/13-attributi-nessuno.png" alt="Keine Attribute">
+  <img src="../screenshots/de/14-nuovo-attributo.png" alt="Neues Attribut">
+  <img src="../screenshots/de/15-nuovo-attributo-nome.png" alt="Attributname">
+  <img src="../screenshots/de/16-tipi-di-attributo.png" alt="Die vier Typen">
+  <img src="../screenshots/de/17-attributi-definiti.png" alt="Zwei definierte Attribute">
+</div>
+
+<p>Vier Typen: <strong>Text</strong> (bis zu 200 Zeichen), <strong>Langer Text</strong>, <strong>Bewertung 1–5</strong> (Sterne) und <strong>Datum</strong>.</p>
+
+<p>Namen müssen eindeutig sein, und der Vergleich ignoriert Akzente und Groß-/Kleinschreibung: „Stadt" und „stadt" wären dasselbe Attribut, nicht zwei verschiedene.</p>
+
+<h3 id="5-2">5.2 Eines für die Listenanzeige auswählen</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/de/18-scelta-del-sottotitolo.png" alt="Untertitelauswahl">
+  <img src="../screenshots/de/22-lista-con-sottotitolo.png" alt="Liste mit Untertitel">
+</div>
+
+<p>Ein Attribut — nur eines — kann zum <strong>Untertitel</strong> der Listenzeilen werden. Das macht die Liste lesbar, wenn Namen allein nicht ausreichen, um Personen zu unterscheiden.</p>
+
+<h3 id="5-3">5.3 Ausfüllen und ansehen</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/de/19-editor-con-attributi.png" alt="Editor mit Attributen">
+  <img src="../screenshots/de/20-editor-attributi-compilati.png" alt="Ausgefüllte Attribute">
+  <img src="../screenshots/de/21-scheda-con-attributi.png" alt="Karte mit Attributen">
+</div>
+
+<p>Definierte Attribute erscheinen am Ende des Editors <strong>jedes</strong> Kontakts in diesem Adressbuch, mit dem für den Typ geeigneten Steuerelement. Ausgefüllte Werte sind in der Kontaktkarte sichtbar.</p>
+
+<p>Das Löschen eines Attributs löscht auch die Werte, die Kontakte für dieses Feld hatten, und die Bestätigung weist darauf hin.</p>
+
+<h2 id="6">6. Private Adressbücher</h2>
+
+<h3 id="6-1">6.1 Das Verwaltungsmenü</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/de/23-menu-amministrazione.png" alt="Verwaltungsmenü">
+</div>
+
+<p>Es öffnet sich durch Eingabe des <strong>Verwaltungscodes</strong> in das Suchfeld des Adressbuchs und Drücken der Eingabetaste. Es gibt keinen anderen Weg: keinen Knopf, keinen Menüeintrag, keine geheime Geste.</p>
+
+<p>Drei Einträge: Ein neues privates Adressbuch erstellen, die Erklärung vom ersten Start nochmals lesen, und das App-Symbol ändern — Letzteres angekündigt, aber <strong>noch nicht implementiert</strong>.</p>
+
+<h3 id="6-2">6.2 Eines erstellen</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/de/24-nuova-rubrica-privata.png" alt="Neues privates Adressbuch">
+  <img src="../screenshots/de/25-rubrica-privata-creata.png" alt="Privates Adressbuch erstellt">
+</div>
+
+<p>Der von Ihnen gewählte Code <strong>ist</strong> der Schlüssel, mit dem das Adressbuch verschlüsselt wird. Er wird nirgendwo gespeichert: Der Schlüssel wird aus den gespeicherten Daten abgeleitet, niemals der Code selbst.</p>
+
+<p>Die Regeln sind dieselben wie für den Verwaltungscode (8+ Zeichen, mindestens ein Buchstabe und eine Ziffer). Ist der Code nicht akzeptabel, sagt die App nur „Ungültiger Code": Sie sagt nicht <strong>warum</strong>, und insbesondere sagt sie nie „Dieser Code ist bereits vergeben" — das würde verraten, dass ein anderes Adressbuch existiert.</p>
+
+<div class="warn">
+<strong>Der Code ist nicht wiederherstellbar.</strong> Es gibt keine Rücksetzung, keine Inhaltswiederherstellung. Das Schloss, das sich zwischen den beiden Bildschirmen schließt, ist kein Dekor: Es ist der einzige Unterschied zwischen „Sie müssen noch einen Code wählen" und „Die Verschlüsselung hat stattgefunden".
+</div>
+
+<h3 id="6-3">6.3 Öffnen und verwenden</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/de/26-rubrica-privata-aperta.png" alt="Privates Adressbuch geöffnet">
+  <img src="../screenshots/de/27-rubrica-privata-con-contatti.png" alt="Privates Adressbuch mit Kontakten">
+</div>
+
+<p>Tippen Sie seinen Code in das Suchfeld und drücken Sie die Eingabetaste: Ein privates Adressbuch ersetzt die öffentliche Liste. Das ist der einzige Weg.</p>
+
+<p>Das einzige Zeichen, dass Sie sich in einem privaten Adressbuch befinden, ist das <strong>kleine Schloss</strong> neben dem Titel — bewusst diskret: Jemand, der den Bildschirm aus der Ferne betrachtet, sieht ein Adressbuch.</p>
+
+<p>Alles funktioniert genauso wie im öffentlichen Adressbuch: Kontakte, Suche, Fotos, Attribute. Zurückdrücken schließt das Adressbuch und seine Datenbank.</p>
+
+<p>Zwei erklärte Einschränkungen:</p>
+<ul>
+  <li><strong>Von innerhalb eines privaten Adressbuchs kann kein anderes geöffnet werden</strong>: Das Suchfeld dort sucht nur;</li>
+  <li><strong>Es gibt keinen Systemimport</strong> (§4).</li>
+</ul>
+
+<h3 id="6-4">6.4 Einstellungen eines privaten Adressbuchs</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/de/28-impostazioni-rubrica-privata.png" alt="Einstellungen des privaten Adressbuchs">
+</div>
+
+<p>Das <strong>öffentliche</strong> Adressbuch hat Import und keine Ghost-Kontakt-Richtlinie; ein <strong>privates</strong> Adressbuch ist genau umgekehrt — kein Import, aber mit der Ghost-Kontakt-Verwaltungsoption (§7).</p>
+
+<h2 id="7">7. Anrufe und Ghost-Kontakte</h2>
+
+<p>Wenn Sie einen Kontakt aus einem privaten Adressbuch anrufen, existiert sein Name für das System nicht — er würde in „Zuletzt" als bloße Nummer erscheinen. PhoneGhost erstellt daher, einen Moment vor dem Wählen, einen <strong>Ghost-Kontakt</strong> im Systemadressbuch mit dem von Ihnen gewählten Alias, sodass das Anrufprotokoll einen Namen anzeigt.</p>
+
+<p>Der <strong>Alias</strong> wird im Kontakteditor gesetzt, und das Feld erscheint <strong>nur innerhalb eines privaten Adressbuchs</strong>: Im öffentlichen Adressbuch macht das keinen Sinn, da die Kontakte dort nicht privat sind.</p>
+
+<p>Die Option „Ghost-Kontakt nach dem Anruf" (§6.4) entscheidet, was mit diesem Kontakt passiert:</p>
+
+<table>
+<tr><th>Einstellung</th><th>Wirkung</th></tr>
+<tr><td><strong>Kontakt behalten</strong> (Standard)</td><td>Der Ghost-Kontakt verbleibt im Systemadressbuch und der Name erscheint weiterhin in „Zuletzt"</td></tr>
+<tr><td><strong>Kontakt löschen</strong></td><td>Der Ghost-Kontakt wird unmittelbar nach dem Anruf entfernt</td></tr>
+</table>
+
+<div class="note">
+<strong>Beide Optionen haben einen Preis.</strong> Gemessen auf einem Galaxy S10 mit dem Samsung-Wähler: Bei Löschung des Ghost-Kontakts verschwindet der Name in „Zuletzt" <strong>sofort</strong>, und nur die Nummer bleibt. Dieser Wähler verwendet den im Protokoll gespeicherten Namen nicht — er löst ihn jedes Mal live aus dem Adressbuch auf. „Löschen" bedeutet also wirklich: <em>keine Spur im Adressbuch, aber auch kein Name im Protokoll</em>. Deshalb ist der Standard „Behalten".
+</div>
+
+<p>Das Verhalten hängt vom Wähler ab: Ein anderes Telefon könnte sich genau entgegengesetzt verhalten. Der Standard ist gewählt, um im schlimmsten Fall zu funktionieren.</p>
+
+<p>Um Ghost-Kontakte in der Kontakte-App des Telefons auszublenden, deaktivieren Sie das Konto <code>it.phoneghost.local</code> unter „Anzuzeigende Kontakte".</p>
+
+<h2 id="8">8. Sprachen und Erscheinungsbild</h2>
+
+<p>Die App spricht <strong>sechs Sprachen</strong> — Italienisch, Englisch, Spanisch, Französisch, Deutsch, Portugiesisch — und folgt der Sprache des Telefons; wer keine der sechs spricht, sieht Englisch.</p>
+
+<p><strong>Helles und dunkles</strong> Design, dem System folgend. Auf dem iPhone verwenden einige Bildschirme native iOS-Steuerelemente.</p>
+
+<h2 id="9">9. Was die App nicht tut</h2>
+
+<ul>
+  <li><strong>Sie schreibt nicht ins Anrufprotokoll.</strong> Keine der beiden Plattformen erlaubt das einer im Store vertriebenen App: Ghost-Kontakte existieren genau deshalb, um diese Einschränkung auf rechtmäßige Weise zu umgehen.</li>
+  <li><strong>Sie kann kein beliebiges Foto als App-Symbol verwenden.</strong> Beide Plattformen erlauben nur die Auswahl aus beim Kompilieren im App-Paket enthaltenen Symbolen. Die Funktion ist noch nicht aktiv.</li>
+  <li><strong>Sie hat keine Inaktivitätssperre, keine Screenshot-Blockierung und keinen Schnellausstieg.</strong> Diese waren geplant und die Steuerelemente wurden entfernt: Sie anzuzeigen ohne sie zu implementieren, wäre ein falsches Sicherheitsversprechen gewesen.</li>
+  <li><strong>Sie synchronisiert nicht und erstellt keine Sicherungen.</strong> Keine Cloud, kein Konto.</li>
+  <li><strong>Keine Favoriten, keine Gruppen.</strong></li>
+</ul>
+
+<h3>Die Grenzen der Abstreitbarkeit, vollständig</h3>
+
+<p>Private Adressbücher verbergen, <em>welche</em> Speicherplätze belegt sind, und die Anzahl ist mit Täuschungsplätzen vermischt. Aber:</p>
+<ul>
+  <li>Jemand mit Zugang zu einem <strong>entsperrten, gerooteten Gerät</strong> kann über den Systemschlüsselbund auf eine (durch Täuschungsplätze aufgeblähte) Anzahl schließen;</li>
+  <li>der <strong>von der App belegte Speicher wächst um 64 KB pro Foto</strong>, und das ist in den Systemeinstellungen ohne jedes Werkzeug ablesbar. Wer eine Kopie der Dateien besitzt, erfährt die <strong>Gesamtzahl der Fotos</strong> über alle Adressbücher hinweg — aber nicht, welchem Adressbuch welches gehört, da Dateinamen zufällig und alle Dateien genau gleich groß sind.</li>
+</ul>
+
+<p>Das ist kein zu behebender Fehler: Es ist die erklärte Grenze dessen, was das Projekt verspricht.</p>
+
+<footer>
+  <a href="https://maurik77.github.io/phoneghost-privacy/">Datenschutzerklärung</a> &middot;
+  <a href="../">Alle Sprachen</a>
+</footer>
+
+</body>
+</html>

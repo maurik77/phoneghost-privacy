@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PhoneGhost — Manuale utente</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 800px; margin: 0 auto; padding: 1.5rem; color: #1a1a1a; background: #fff; line-height: 1.6; }
+  nav.langs { margin-bottom: 2rem; padding: 0.75rem 1rem; background: #f5f5f5; border-radius: 6px; font-size: 0.9rem; }
+  nav.langs a { margin-right: 0.75rem; text-decoration: none; color: #0066cc; }
+  nav.langs a:hover { text-decoration: underline; }
+  nav.langs a.current { font-weight: 700; color: #1a1a1a; pointer-events: none; }
+  h1 { font-size: 1.6rem; margin-bottom: 0.25rem; }
+  h2 { font-size: 1.25rem; margin-top: 2.5rem; border-bottom: 1px solid #e0e0e0; padding-bottom: 0.25rem; }
+  h3 { font-size: 1.05rem; margin-top: 1.75rem; }
+  nav.toc { background: #f9f9f9; border: 1px solid #e0e0e0; border-radius: 6px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+  nav.toc ol { margin: 0.5rem 0 0; padding-left: 1.25rem; }
+  nav.toc li { margin: 0.2rem 0; }
+  nav.toc a { color: #0066cc; text-decoration: none; font-size: 0.95rem; }
+  nav.toc a:hover { text-decoration: underline; }
+  .screenshots { display: flex; flex-wrap: wrap; gap: 12px; margin: 1rem 0; }
+  .screenshots img { width: calc(50% - 6px); max-width: 280px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+  @media (max-width: 500px) { .screenshots img { width: 100%; } }
+  .note { background: #fff8e1; border-left: 3px solid #f9a825; padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  .warn { background: #fff3e0; border-left: 3px solid #e65100; padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+  th, td { border: 1px solid #ddd; padding: 0.5rem 0.75rem; text-align: left; }
+  th { background: #f5f5f5; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0e0e0; font-size: 0.85rem; color: #666; }
+  footer a { color: #0066cc; }
+  a { color: #0066cc; }
+</style>
+</head>
+<body>
+
+<nav class="langs">
+  <strong>Lingua:</strong>
+  <a href="../it/" class="current">Italiano</a>
+  <a href="../en/">English</a>
+  <a href="../es/">Español</a>
+  <a href="../fr/">Français</a>
+  <a href="../de/">Deutsch</a>
+  <a href="../pt/">Português</a>
+</nav>
+
+<h1>PhoneGhost — Manuale utente</h1>
+
+<nav class="toc">
+  <strong>Indice</strong>
+  <ol>
+    <li><a href="#1">Che cos'è</a></li>
+    <li><a href="#2">Primo avvio</a></li>
+    <li><a href="#3">La rubrica pubblica</a></li>
+    <li><a href="#4">Importare dalla rubrica del telefono</a></li>
+    <li><a href="#5">Attributi personalizzati</a></li>
+    <li><a href="#6">Le rubriche private</a></li>
+    <li><a href="#7">Chiamate e contatti-ombra</a></li>
+    <li><a href="#8">Lingue e aspetto</a></li>
+    <li><a href="#9">Ciò che l'app non fa</a></li>
+  </ol>
+</nav>
+
+<h2 id="1">1. Che cos'è</h2>
+
+<p>PhoneGhost è una <strong>seconda rubrica</strong>, separata da quella del telefono, che può inoltre ospitare una o più <strong>rubriche private cifrate</strong>, ciascuna protetta da un codice scelto da te.</p>
+
+<p>Le rubriche private non sono una funzione nascosta: l'app le dichiara apertamente, alla prima apertura e sugli store. Quello che è nascosto è <strong>quante ne esistono e se ne esistono</strong> — e questo non è un dettaglio di presentazione ma il principio su cui è costruito tutto il resto. Non c'è un elenco, non c'è un contatore, non c'è un'icona che si accende. Nemmeno per te.</p>
+
+<h2 id="2">2. Primo avvio</h2>
+
+<p>Succede una sola volta per installazione, e non si può saltare.</p>
+
+<h3 id="2-1">2.1 La spiegazione</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/it/01-benvenuto.png" alt="Schermata di benvenuto">
+  <img src="../screenshots/it/02-benvenuto-seguito.png" alt="Seguito della spiegazione">
+</div>
+
+<p>È l'unico punto dell'app in cui il meccanismo è raccontato per intero, e i disegni servono a dire senza parole ciò che le parole spiegano male: il codice di una rubrica privata digitato nella ricerca apre <strong>quella rubrica</strong>; il codice amministrativo apre <strong>un menu</strong>, non una rubrica.</p>
+
+<p>La spiegazione resta raggiungibile per sempre dal menu amministrativo (§6.1): non è una schermata che si vede una volta e si perde.</p>
+
+<h3 id="2-2">2.2 Preparazione dell'archivio cifrato</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/it/03-preparazione-archivio.png" alt="Preparazione al 16%">
+  <img src="../screenshots/it/04-preparazione-archivio-avanzata.png" alt="Preparazione al 61%">
+</div>
+
+<p>L'app scrive qui lo spazio che ospiterà le rubriche private — <strong>sempre lo stesso</strong>, che tu ne crei una, dieci o nessuna. È per questo che l'attesa non dice nulla su di te: la barra si muove identica in ogni installazione.</p>
+
+<p>Sono decine di secondi su un telefono del 2019. Il lucchetto si riempie insieme alla barra, e un riflesso lo attraversa lentamente: serve a distinguere «sto lavorando» da «mi sono bloccato», che è l'unico dubbio che questa schermata esiste per togliere.</p>
+
+<h3 id="2-3">2.3 Il codice amministrativo</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/it/05-codice-amministrativo.png" alt="Scelta del codice amministrativo">
+  <img src="../screenshots/it/06-codice-amministrativo-impostato.png" alt="Conferma del codice amministrativo">
+</div>
+
+<p>Almeno 8 caratteri, con almeno una lettera e una cifra.</p>
+
+<div class="warn">
+<strong>È permanente e non è recuperabile</strong>: non si cambia, non si reimposta, non esiste una domanda di sicurezza. Se lo dimentichi non potrai più creare nuove rubriche private — quelle già create restano raggiungibili con i loro codici, che sono diversi da questo.
+</div>
+
+<p>La schermata di conferma esiste per dire una cosa sola, quella che si sbaglia più spesso: <strong>il codice amministrativo non apre una rubrica, apre un menu.</strong></p>
+
+<h2 id="3">3. La rubrica pubblica</h2>
+
+<div class="screenshots">
+  <img src="../screenshots/it/07-rubrica-vuota.png" alt="Rubrica vuota">
+  <img src="../screenshots/it/10-lista-contatti.png" alt="Lista contatti">
+  <img src="../screenshots/it/11-scheda-contatto.png" alt="Scheda contatto">
+</div>
+
+<p>Una rubrica ordinaria: lista ordinata alfabeticamente con le lettere di sezione, avatar con le iniziali (il colore deriva dal nome, non è casuale né scelto a mano), ricerca, scheda, modifica, eliminazione.</p>
+
+<p><strong>La ricerca ignora accenti e maiuscole.</strong> Cercando <code>nicolo</code> trovi <em>Nicolò</em>, e viceversa: internamente i nomi sono confrontati su una forma «ripiegata». Vale per il nome, il cognome e l'azienda.</p>
+
+<p><strong>L'eliminazione chiede conferma</strong> con un dialogo, e non è annullabile: dentro una rubrica privata non esiste una copia di sistema da cui recuperare.</p>
+
+<h3 id="3-1">3.1 Creare e modificare un contatto</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/it/08-nuovo-contatto.png" alt="Editor vuoto">
+  <img src="../screenshots/it/09-nuovo-contatto-compilato.png" alt="Editor compilato">
+</div>
+
+<p>Nome, cognome, azienda, ruolo, <strong>più numeri di telefono</strong> e <strong>più indirizzi email</strong>, ciascuno con la propria etichetta (cellulare, casa, lavoro, o un'etichetta tua). «Aggiungi numero» e «Aggiungi email» creano una riga in più.</p>
+
+<p>La <strong>foto</strong> si tocca in cima: si scatta con la fotocamera o si sceglie dalla galleria. Viene ridimensionata e salvata cifrata in un file a sé; se il permesso viene negato l'app lo dice invece di fallire in silenzio.</p>
+
+<div class="note">
+<strong>Limite noto.</strong> Nella scheda contatto è chiamabile <strong>solo il primo numero</strong>, e nulla lo segnala: toccare il secondo non fa niente. È un difetto registrato, non un comportamento voluto.
+</div>
+
+<h2 id="4">4. Importare dalla rubrica del telefono</h2>
+
+<div class="screenshots">
+  <img src="../screenshots/it/07-rubrica-vuota.png" alt="Invito all'import sulla rubrica vuota">
+  <img src="../screenshots/it/12-impostazioni.png" alt="Import nelle impostazioni">
+</div>
+
+<p>L'import vive in <strong>due punti</strong>, che rispondono a due bisogni diversi:</p>
+<ul>
+  <li>sopra la lista, finché un import non è mai stato tentato — è la via di chi apre l'app per la prima volta;</li>
+  <li>nelle <strong>impostazioni</strong>, sempre — è la via di chi torna a rifarlo.</li>
+</ul>
+
+<p><strong>Si può ripetere quante volte vuoi.</strong> I contatti già presenti vengono riconosciuti e saltati, quindi la rubrica non raddoppia. Il riconoscimento funziona così:</p>
+<ul>
+  <li>se il contatto del telefono ha almeno un numero, è «già presente» quando <strong>almeno uno dei suoi numeri</strong> è già in rubrica;</li>
+  <li>se non ha numeri utilizzabili, quando <strong>il nome coincide</strong> (ignorando accenti e maiuscole).</li>
+</ul>
+
+<p>Il numero conta più del nome di proposito: due persone diverse possono chiamarsi allo stesso modo, e la regola opposta ne farebbe sparire una in silenzio.</p>
+
+<p><strong>Salta, non aggiorna.</strong> Un contatto già presente non viene sovrascritto con i dati del telefono: le modifiche fatte dentro PhoneGhost — etichette, attributi personalizzati, alias — restano tue. La conseguenza accettata è che se cambi il numero a qualcuno <em>sul telefono</em>, un nuovo import lo aggiunge come contatto nuovo invece di aggiornare quello vecchio.</p>
+
+<p>A fine import l'app dice <strong>sempre</strong> com'è andata, anche quando non c'era niente da fare («Nessun contatto nuovo da importare»), perché un import che non trova nulla e un import che non è partito sarebbero altrimenti la stessa schermata immobile.</p>
+
+<p><strong>L'import esiste solo sulla rubrica pubblica.</strong> Le rubriche private non importano mai dalla rubrica di sistema.</p>
+
+<h2 id="5">5. Attributi personalizzati</h2>
+
+<p>Campi in più, definiti da te, <strong>diversi per ogni rubrica</strong>: quelli della rubrica pubblica non esistono dentro una privata e viceversa.</p>
+
+<h3 id="5-1">5.1 Definirli</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/it/13-attributi-nessuno.png" alt="Nessun attributo">
+  <img src="../screenshots/it/14-nuovo-attributo.png" alt="Nuovo attributo">
+  <img src="../screenshots/it/15-nuovo-attributo-nome.png" alt="Nome dell'attributo">
+  <img src="../screenshots/it/16-tipi-di-attributo.png" alt="I quattro tipi">
+  <img src="../screenshots/it/17-attributi-definiti.png" alt="Due attributi definiti">
+</div>
+
+<p>Quattro tipi: <strong>Testo</strong> (fino a 200 caratteri), <strong>Testo lungo</strong>, <strong>Voto 1-5</strong> (stelle) e <strong>Data</strong>.</p>
+
+<p>I nomi devono essere distinti, e il confronto ignora accenti e maiuscole: «Citta» e «Città» sono lo stesso attributo, non due.</p>
+
+<h3 id="5-2">5.2 Sceglierne uno da mostrare in lista</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/it/18-scelta-del-sottotitolo.png" alt="Scelta del sottotitolo">
+  <img src="../screenshots/it/22-lista-con-sottotitolo.png" alt="Lista con sottotitolo">
+</div>
+
+<p>Un attributo — uno solo — può diventare il <strong>sottotitolo</strong> delle righe della rubrica. Serve a rendere la lista leggibile quando i nomi non bastano a distinguere le persone.</p>
+
+<h3 id="5-3">5.3 Compilarli e vederli</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/it/19-editor-con-attributi.png" alt="Editor con attributi">
+  <img src="../screenshots/it/20-editor-attributi-compilati.png" alt="Attributi compilati">
+  <img src="../screenshots/it/21-scheda-con-attributi.png" alt="Scheda con attributi">
+</div>
+
+<p>Gli attributi definiti compaiono in fondo all'editor di <strong>ogni</strong> contatto di quella rubrica, con il controllo adatto al tipo. I valori compilati si leggono nella scheda.</p>
+
+<p>Eliminare un attributo elimina anche i valori che i contatti avevano per quel campo, e la conferma lo dice.</p>
+
+<h2 id="6">6. Le rubriche private</h2>
+
+<h3 id="6-1">6.1 Il menu amministrativo</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/it/23-menu-amministrazione.png" alt="Menu amministrazione">
+</div>
+
+<p>Si apre digitando il <strong>codice amministrativo</strong> nel campo di ricerca della rubrica e premendo invio. Non c'è nessun'altra via: nessun pulsante, nessuna voce di menu, nessuna gesture segreta.</p>
+
+<p>Tre voci: creare una nuova rubrica privata, rileggere la spiegazione del primo avvio, e cambiare l'icona dell'app — quest'ultima annunciata ma <strong>non ancora implementata</strong>.</p>
+
+<h3 id="6-2">6.2 Crearne una</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/it/24-nuova-rubrica-privata.png" alt="Nuova rubrica privata">
+  <img src="../screenshots/it/25-rubrica-privata-creata.png" alt="Rubrica privata creata">
+</div>
+
+<p>Il codice che scegli <strong>è</strong> la chiave con cui la rubrica viene cifrata. Non viene salvato da nessuna parte: dallo spazio su disco si ricava la chiave, mai il codice.</p>
+
+<p>Le regole sono le stesse del codice amministrativo (8+ caratteri, almeno una lettera e una cifra). Se il codice non è accettabile l'app dice soltanto «Codice non valido»: non dice <strong>perché</strong>, e in particolare non dice mai «questo codice è già in uso» — lo direbbe, con ciò, che esiste un'altra rubrica.</p>
+
+<div class="warn">
+<strong>Il codice non è recuperabile.</strong> Non c'è reimpostazione, non c'è recupero del contenuto. Il lucchetto che si chiude fra le due schermate non è decorazione: è l'unica differenza fra «devi ancora scegliere il codice» e «la cifratura è avvenuta».
+</div>
+
+<h3 id="6-3">6.3 Aprirla e usarla</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/it/26-rubrica-privata-aperta.png" alt="Rubrica privata aperta">
+  <img src="../screenshots/it/27-rubrica-privata-con-contatti.png" alt="Rubrica privata con contatti">
+</div>
+
+<p>Si digita il suo codice nel campo di ricerca e si preme invio: la rubrica privata prende il posto della lista pubblica. È l'unico modo.</p>
+
+<p>L'unico segno che sei dentro una rubrica privata è il <strong>piccolo lucchetto</strong> accanto al titolo — discreto di proposito: chi guarda lo schermo da lontano vede una rubrica.</p>
+
+<p>Dentro funziona tutto come nella pubblica: contatti, ricerca, foto, attributi. Uscire (freccia indietro) chiude la rubrica e il suo database.</p>
+
+<p>Due limiti dichiarati:</p>
+<ul>
+  <li><strong>da dentro una rubrica privata non se ne apre un'altra</strong>: il campo di ricerca lì dentro cerca soltanto;</li>
+  <li><strong>l'import di sistema non c'è</strong> (§4).</li>
+</ul>
+
+<h3 id="6-4">6.4 Le impostazioni di una rubrica privata</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/it/28-impostazioni-rubrica-privata.png" alt="Impostazioni rubrica privata">
+</div>
+
+<p>Nella rubrica <strong>pubblica</strong> c'è l'import e non c'è la policy contatto-ombra; in una rubrica <strong>privata</strong> è l'esatto contrario — niente import, e in più la voce per la gestione del contatto-ombra (§7).</p>
+
+<h2 id="7">7. Chiamate e contatti-ombra</h2>
+
+<p>Quando chiami un contatto di una rubrica privata, il suo nome non esiste per il sistema — nei Recenti comparirebbe un numero nudo. PhoneGhost crea allora, un istante prima di comporre, un <strong>contatto-ombra</strong> nella rubrica di sistema con l'alias che hai scelto, così il registro chiamate mostra un nome.</p>
+
+<p>L'<strong>alias</strong> si imposta nell'editor del contatto, e il campo compare <strong>solo dentro una rubrica privata</strong>: sulla rubrica pubblica non avrebbe senso, perché lì i contatti non sono privati.</p>
+
+<p>La voce «Contatto-ombra a fine chiamata» (§6.4) decide che fine fa quel contatto:</p>
+
+<table>
+<tr><th>Valore</th><th>Effetto</th></tr>
+<tr><td><strong>Mantieni il contatto</strong> (predefinito)</td><td>Il contatto-ombra resta nella rubrica di sistema, e il nome continua a comparire nei Recenti</td></tr>
+<tr><td><strong>Elimina il contatto</strong></td><td>Il contatto-ombra viene rimosso subito dopo la chiamata</td></tr>
+</table>
+
+<div class="note">
+<strong>La scelta ha un costo in entrambe le direzioni.</strong> Misurato su un Galaxy S10 con il dialer Samsung: cancellando il contatto-ombra, il nome nei Recenti <strong>sparisce immediatamente</strong> e resta il numero. Quel dialer non usa il nome memorizzato nel registro, lo risolve ogni volta dalla rubrica. Quindi «Elimina» significa davvero <em>nessuna traccia in rubrica, ma nemmeno il nome nel registro</em>. È per questo che il valore predefinito è «Mantieni».
+</div>
+
+<p>Il comportamento dipende dal dialer: un telefono diverso potrebbe comportarsi all'opposto. Il predefinito è scelto perché regga nel caso peggiore.</p>
+
+<p>Il modo di rendere invisibili i contatti-ombra nell'app Rubrica del telefono è deselezionare l'account <code>it.phoneghost.local</code> da «Contatti da visualizzare».</p>
+
+<h2 id="8">8. Lingue e aspetto</h2>
+
+<p>L'app parla <strong>sei lingue</strong> — italiano, inglese, spagnolo, francese, tedesco, portoghese — e segue la lingua del telefono; chi non parla nessuna delle sei vede l'inglese.</p>
+
+<p>Tema <strong>chiaro e scuro</strong>, seguendo il sistema. Su iPhone alcune schermate adottano i controlli di sistema iOS.</p>
+
+<h2 id="9">9. Ciò che l'app non fa</h2>
+
+<ul>
+  <li><strong>Non scrive nel registro chiamate.</strong> Nessuna delle due piattaforme lo consente a un'app distribuita sugli store: i contatti-ombra esistono proprio per aggirare questo limite in modo lecito.</li>
+  <li><strong>Non può usare una foto qualsiasi come icona dell'app.</strong> Le due piattaforme permettono solo di scegliere fra icone incluse nell'app al momento della compilazione. La funzione non è ancora attiva.</li>
+  <li><strong>Non ha un blocco per inattività, un blocco degli screenshot, né un'uscita rapida.</strong> Erano previsti e i controlli sono stati rimossi: mostrarli senza che facciano qualcosa sarebbe stata una falsa promessa di sicurezza.</li>
+  <li><strong>Non sincronizza e non fa backup.</strong> Non c'è nuvola, non c'è account.</li>
+  <li><strong>Non ha preferiti né gruppi.</strong></li>
+</ul>
+
+<h3>Il limite della negabilità, per intero</h3>
+
+<p>Le rubriche private nascondono <em>quali</em> spazi sono occupati, e il conteggio è mescolato con spazi civetta. Ma:</p>
+<ul>
+  <li>chi ha accesso a un telefono <strong>sbloccato e con permessi di root</strong> può risalire a un conteggio (gonfiato dai civetta) attraverso il portachiavi del sistema;</li>
+  <li>lo <strong>spazio occupato dall'app cresce di 64 KiB per ogni foto</strong>, ed è leggibile dalle impostazioni di sistema senza alcuno strumento. Chi possiede una copia dei file impara <strong>quante foto</strong> esistono in totale — non a quale rubrica appartengano, perché i nomi dei file sono casuali e tutti i file hanno la stessa dimensione.</li>
+</ul>
+
+<p>Non è un difetto da correggere: è il confine dichiarato di ciò che il progetto promette.</p>
+
+<footer>
+  <a href="https://maurik77.github.io/phoneghost-privacy/">Privacy Policy</a> &middot;
+  <a href="../">Tutte le lingue</a>
+</footer>
+
+</body>
+</html>

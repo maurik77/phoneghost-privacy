@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PhoneGhost — Manual do utilizador</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 800px; margin: 0 auto; padding: 1.5rem; color: #1a1a1a; background: #fff; line-height: 1.6; }
+  nav.langs { margin-bottom: 2rem; padding: 0.75rem 1rem; background: #f5f5f5; border-radius: 6px; font-size: 0.9rem; }
+  nav.langs a { margin-right: 0.75rem; text-decoration: none; color: #0066cc; }
+  nav.langs a:hover { text-decoration: underline; }
+  nav.langs a.current { font-weight: 700; color: #1a1a1a; pointer-events: none; }
+  h1 { font-size: 1.6rem; margin-bottom: 0.25rem; }
+  h2 { font-size: 1.25rem; margin-top: 2.5rem; border-bottom: 1px solid #e0e0e0; padding-bottom: 0.25rem; }
+  h3 { font-size: 1.05rem; margin-top: 1.75rem; }
+  nav.toc { background: #f9f9f9; border: 1px solid #e0e0e0; border-radius: 6px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+  nav.toc ol { margin: 0.5rem 0 0; padding-left: 1.25rem; }
+  nav.toc li { margin: 0.2rem 0; }
+  nav.toc a { color: #0066cc; text-decoration: none; font-size: 0.95rem; }
+  nav.toc a:hover { text-decoration: underline; }
+  .screenshots { display: flex; flex-wrap: wrap; gap: 12px; margin: 1rem 0; }
+  .screenshots img { width: calc(50% - 6px); max-width: 280px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+  @media (max-width: 500px) { .screenshots img { width: 100%; } }
+  .note { background: #fff8e1; border-left: 3px solid #f9a825; padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  .warn { background: #fff3e0; border-left: 3px solid #e65100; padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+  th, td { border: 1px solid #ddd; padding: 0.5rem 0.75rem; text-align: left; }
+  th { background: #f5f5f5; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0e0e0; font-size: 0.85rem; color: #666; }
+  footer a { color: #0066cc; }
+  a { color: #0066cc; }
+</style>
+</head>
+<body>
+
+<nav class="langs">
+  <strong>Língua:</strong>
+  <a href="../it/">Italiano</a>
+  <a href="../en/">English</a>
+  <a href="../es/">Español</a>
+  <a href="../fr/">Français</a>
+  <a href="../de/">Deutsch</a>
+  <a href="../pt/" class="current">Português</a>
+</nav>
+
+<h1>PhoneGhost — Manual do utilizador</h1>
+
+<nav class="toc">
+  <strong>Índice</strong>
+  <ol>
+    <li><a href="#1">O que é</a></li>
+    <li><a href="#2">Primeiro arranque</a></li>
+    <li><a href="#3">A agenda pública</a></li>
+    <li><a href="#4">Importar da agenda do telefone</a></li>
+    <li><a href="#5">Atributos personalizados</a></li>
+    <li><a href="#6">As agendas privadas</a></li>
+    <li><a href="#7">Chamadas e contactos fantasma</a></li>
+    <li><a href="#8">Idiomas e aspeto</a></li>
+    <li><a href="#9">O que a app não faz</a></li>
+  </ol>
+</nav>
+
+<h2 id="1">1. O que é</h2>
+
+<p>PhoneGhost é uma <strong>segunda agenda</strong>, separada da do telefone, que pode ainda albergar uma ou mais <strong>agendas privadas cifradas</strong>, cada uma protegida por um código que você escolhe.</p>
+
+<p>As agendas privadas não são uma funcionalidade oculta: a app declara-as abertamente, no primeiro arranque e nas lojas. O que está oculto é <strong>quantas existem e se existe alguma</strong> — e isto não é um detalhe de apresentação, mas o princípio em que todo o resto é construído. Não há lista, não há contador, não há ícone que se acende. Nem sequer para si.</p>
+
+<h2 id="2">2. Primeiro arranque</h2>
+
+<p>Acontece uma única vez por instalação e não pode ser ignorado.</p>
+
+<h3 id="2-1">2.1 A explicação</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/pt/01-benvenuto.png" alt="Ecrã de boas-vindas">
+  <img src="../screenshots/pt/02-benvenuto-seguito.png" alt="Explicação (continuação)">
+</div>
+
+<p>É o único ponto da app em que o mecanismo é explicado na íntegra. As ilustrações dizem sem palavras o que as palavras explicam mal: o código de uma agenda privada digitado na pesquisa abre <strong>essa agenda</strong>; o código administrativo abre <strong>um menu</strong>, não uma agenda.</p>
+
+<p>A explicação fica acessível a qualquer momento a partir do menu administrativo (§6.1): não é um ecrã que se vê uma vez e se perde.</p>
+
+<h3 id="2-2">2.2 Preparação do arquivo cifrado</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/pt/03-preparazione-archivio.png" alt="Preparação a 16 %">
+  <img src="../screenshots/pt/04-preparazione-archivio-avanzata.png" alt="Preparação a 61 %">
+</div>
+
+<p>A app escreve aqui o espaço que albergará as agendas privadas — <strong>sempre o mesmo</strong>, quer crie uma, dez ou nenhuma. É por isso que a espera não revela nada sobre si: a barra de progresso avança de forma idêntica em cada instalação.</p>
+
+<p>São dezenas de segundos num telefone de 2019. O cadeado enche-se juntamente com a barra, e um reflexo atravessa-o lentamente: serve para distinguir «estou a trabalhar» de «fiquei bloqueado», que é a única dúvida que este ecrã existe para resolver.</p>
+
+<h3 id="2-3">2.3 O código administrativo</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/pt/05-codice-amministrativo.png" alt="Escolha do código administrativo">
+  <img src="../screenshots/pt/06-codice-amministrativo-impostato.png" alt="Confirmação do código administrativo">
+</div>
+
+<p>Pelo menos 8 caracteres, com pelo menos uma letra e um algarismo.</p>
+
+<div class="warn">
+<strong>É permanente e irrecuperável</strong>: não pode ser alterado, reposto nem recuperado através de uma pergunta de segurança. Se o esquecer, deixa de poder criar novas agendas privadas — as já criadas continuam acessíveis com os seus próprios códigos, que são distintos deste.
+</div>
+
+<p>O ecrã de confirmação existe para dizer uma única coisa — a que se entende mais frequentemente mal: <strong>o código administrativo abre um menu, não uma agenda.</strong></p>
+
+<h2 id="3">3. A agenda pública</h2>
+
+<div class="screenshots">
+  <img src="../screenshots/pt/07-rubrica-vuota.png" alt="Agenda vazia">
+  <img src="../screenshots/pt/10-lista-contatti.png" alt="Lista de contactos">
+  <img src="../screenshots/pt/11-scheda-contatto.png" alt="Ficha de contacto">
+</div>
+
+<p>Uma agenda comum: lista ordenada alfabeticamente com letras de secção, avatar com iniciais (a cor deriva do nome, não é aleatória nem escolhida manualmente), pesquisa, ficha, edição, eliminação.</p>
+
+<p><strong>A pesquisa ignora acentos e maiúsculas.</strong> Pesquisando <code>joao</code> encontra <em>João</em>, e vice-versa: internamente os nomes são comparados numa forma «normalizada». Aplica-se ao nome próprio, apelido e empresa.</p>
+
+<p><strong>A eliminação pede confirmação</strong> através de um diálogo e não é reversível: dentro de uma agenda privada não existe uma cópia do sistema a partir da qual recuperar.</p>
+
+<h3 id="3-1">3.1 Criar e editar um contacto</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/pt/08-nuovo-contatto.png" alt="Editor vazio">
+  <img src="../screenshots/pt/09-nuovo-contatto-compilato.png" alt="Editor preenchido">
+</div>
+
+<p>Nome próprio, apelido, empresa, função, <strong>vários números de telefone</strong> e <strong>vários endereços de e-mail</strong>, cada um com a sua própria etiqueta (telemóvel, casa, trabalho, ou uma etiqueta personalizada). «Adicionar número» e «Adicionar e-mail» criam uma linha adicional.</p>
+
+<p>A <strong>fotografia</strong> toca-se no topo: tirada com a câmara ou escolhida da galeria. É redimensionada e guardada cifrada num ficheiro independente; se a permissão for negada, a app informa em vez de falhar silenciosamente.</p>
+
+<div class="note">
+<strong>Limitação conhecida.</strong> Na ficha de contacto, só é possível ligar para o <strong>primeiro número</strong>, e nada o indica: tocar no segundo não faz nada. É um defeito registado, não um comportamento intencional.
+</div>
+
+<h2 id="4">4. Importar da agenda do telefone</h2>
+
+<div class="screenshots">
+  <img src="../screenshots/pt/07-rubrica-vuota.png" alt="Convite para importar na agenda vazia">
+  <img src="../screenshots/pt/12-impostazioni.png" alt="Importar nas definições">
+</div>
+
+<p>A importação existe em <strong>dois locais</strong>, respondendo a duas necessidades distintas:</p>
+<ul>
+  <li>acima da lista, enquanto nunca foi tentada uma importação — é a via para quem abre a app pela primeira vez;</li>
+  <li>nas <strong>definições</strong>, sempre — é a via para quem quer repeti-la.</li>
+</ul>
+
+<p><strong>Pode ser repetida quantas vezes quiser.</strong> Os contactos já presentes são reconhecidos e ignorados, pelo que a agenda não duplica. O reconhecimento funciona assim:</p>
+<ul>
+  <li>se o contacto do telefone tem pelo menos um número, está «já presente» quando <strong>pelo menos um dos seus números</strong> já está na agenda;</li>
+  <li>se não tem números utilizáveis, quando <strong>o nome coincide</strong> (ignorando acentos e maiúsculas).</li>
+</ul>
+
+<p>O número tem prioridade sobre o nome intencionalmente: duas pessoas diferentes podem ter o mesmo nome, e a regra inversa faria desaparecer uma delas silenciosamente.</p>
+
+<p><strong>Ignora, não atualiza.</strong> Um contacto já presente não é substituído pelos dados do telefone: as alterações feitas dentro do PhoneGhost — etiquetas, atributos personalizados, aliases — continuam a ser suas. A consequência aceite é que, se alterar o número de alguém <em>no telefone</em>, uma nova importação adiciona-o como novo contacto em vez de atualizar o existente.</p>
+
+<p>No fim de uma importação, a app <strong>informa sempre</strong> o que aconteceu, mesmo quando não havia nada a fazer («Sem novos contactos para importar»), porque uma importação que não encontra nada e uma que nunca começou seriam de outro modo o mesmo ecrã imóvel.</p>
+
+<p><strong>A importação existe apenas na agenda pública.</strong> As agendas privadas nunca importam da agenda do sistema.</p>
+
+<h2 id="5">5. Atributos personalizados</h2>
+
+<p>Campos adicionais, definidos por si, <strong>diferentes para cada agenda</strong>: os da agenda pública não existem dentro de uma privada e vice-versa.</p>
+
+<h3 id="5-1">5.1 Defini-los</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/pt/13-attributi-nessuno.png" alt="Sem atributos">
+  <img src="../screenshots/pt/14-nuovo-attributo.png" alt="Novo atributo">
+  <img src="../screenshots/pt/15-nuovo-attributo-nome.png" alt="Nome do atributo">
+  <img src="../screenshots/pt/16-tipi-di-attributo.png" alt="Os quatro tipos">
+  <img src="../screenshots/pt/17-attributi-definiti.png" alt="Dois atributos definidos">
+</div>
+
+<p>Quatro tipos: <strong>Texto</strong> (até 200 caracteres), <strong>Texto longo</strong>, <strong>Avaliação 1–5</strong> (estrelas) e <strong>Data</strong>.</p>
+
+<p>Os nomes devem ser distintos, e a comparação ignora acentos e maiúsculas: «Cidade» e «cidade» seriam o mesmo atributo, não dois.</p>
+
+<h3 id="5-2">5.2 Escolher um para mostrar na lista</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/pt/18-scelta-del-sottotitolo.png" alt="Escolha do subtítulo">
+  <img src="../screenshots/pt/22-lista-con-sottotitolo.png" alt="Lista com subtítulo">
+</div>
+
+<p>Um atributo — apenas um — pode tornar-se o <strong>subtítulo</strong> das linhas da agenda. Serve para tornar a lista legível quando os nomes não são suficientes para distinguir as pessoas.</p>
+
+<h3 id="5-3">5.3 Preenchê-los e vê-los</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/pt/19-editor-con-attributi.png" alt="Editor com atributos">
+  <img src="../screenshots/pt/20-editor-attributi-compilati.png" alt="Atributos preenchidos">
+  <img src="../screenshots/pt/21-scheda-con-attributi.png" alt="Ficha com atributos">
+</div>
+
+<p>Os atributos definidos aparecem no final do editor de <strong>cada</strong> contacto dessa agenda, com o controlo adequado ao tipo. Os valores preenchidos são visíveis na ficha.</p>
+
+<p>Eliminar um atributo elimina também os valores que os contactos tinham para esse campo, e a confirmação avisa.</p>
+
+<h2 id="6">6. As agendas privadas</h2>
+
+<h3 id="6-1">6.1 O menu administrativo</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/pt/23-menu-amministrazione.png" alt="Menu administrativo">
+</div>
+
+<p>Abre-se digitando o <strong>código administrativo</strong> no campo de pesquisa da agenda e premindo enter. Não há nenhuma outra via: nenhum botão, nenhuma entrada de menu, nenhum gesto secreto.</p>
+
+<p>Três entradas: criar uma nova agenda privada, reler a explicação do primeiro arranque, e alterar o ícone da app — esta última anunciada mas <strong>ainda não implementada</strong>.</p>
+
+<h3 id="6-2">6.2 Criar uma</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/pt/24-nuova-rubrica-privata.png" alt="Nova agenda privada">
+  <img src="../screenshots/pt/25-rubrica-privata-creata.png" alt="Agenda privada criada">
+</div>
+
+<p>O código que escolhe <strong>é</strong> a chave com que a agenda é cifrada. Não é guardado em lado nenhum: a chave é derivada dos dados armazenados, nunca o próprio código.</p>
+
+<p>As regras são as mesmas que para o código administrativo (8+ caracteres, pelo menos uma letra e um algarismo). Se o código não for aceitável, a app apenas diz «Código inválido»: não diz <strong>porquê</strong>, e em particular nunca diz «este código já está em uso» — ao dizê-lo, revelaria que existe outra agenda.</p>
+
+<div class="warn">
+<strong>O código é irrecuperável.</strong> Não há reposição, não há recuperação do conteúdo. O cadeado que se fecha entre os dois ecrãs não é decoração: é a única diferença entre «ainda tem de escolher um código» e «a cifragem ocorreu».
+</div>
+
+<h3 id="6-3">6.3 Abri-la e usá-la</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/pt/26-rubrica-privata-aperta.png" alt="Agenda privada aberta">
+  <img src="../screenshots/pt/27-rubrica-privata-con-contatti.png" alt="Agenda privada com contactos">
+</div>
+
+<p>Digite o código no campo de pesquisa e prima enter: a agenda privada substitui a lista pública. Esta é a única forma.</p>
+
+<p>O único sinal de que está dentro de uma agenda privada é o <strong>pequeno cadeado</strong> junto ao título — discreto de propósito: quem olha para o ecrã de longe vê uma agenda.</p>
+
+<p>Tudo funciona como na pública: contactos, pesquisa, fotografias, atributos. Premir Retroceder fecha a agenda e a sua base de dados.</p>
+
+<p>Duas limitações declaradas:</p>
+<ul>
+  <li><strong>de dentro de uma agenda privada não se pode abrir outra</strong>: o campo de pesquisa aí apenas pesquisa;</li>
+  <li><strong>a importação do sistema não existe</strong> (§4).</li>
+</ul>
+
+<h3 id="6-4">6.4 Definições de uma agenda privada</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/pt/28-impostazioni-rubrica-privata.png" alt="Definições da agenda privada">
+</div>
+
+<p>A agenda <strong>pública</strong> tem importação e não tem política de contacto fantasma; uma agenda <strong>privada</strong> é exactamente o contrário — sem importação, mas com a opção de gestão do contacto fantasma (§7).</p>
+
+<h2 id="7">7. Chamadas e contactos fantasma</h2>
+
+<p>Quando liga para um contacto de uma agenda privada, o nome desse contacto não existe para o sistema — apareceria como um número a descoberto em Recentes. O PhoneGhost cria então, um instante antes de marcar, um <strong>contacto fantasma</strong> na agenda do sistema com o alias que escolheu, para que o registo de chamadas mostre um nome.</p>
+
+<p>O <strong>alias</strong> define-se no editor do contacto, e o campo aparece <strong>apenas dentro de uma agenda privada</strong>: na agenda pública não faria sentido, porque os contactos aí não são privados.</p>
+
+<p>A opção «Contacto fantasma após a chamada» (§6.4) decide o destino desse contacto:</p>
+
+<table>
+<tr><th>Opção</th><th>Efeito</th></tr>
+<tr><td><strong>Manter o contacto</strong> (predefinido)</td><td>O contacto fantasma permanece na agenda do sistema e o nome continua a aparecer em Recentes</td></tr>
+<tr><td><strong>Eliminar o contacto</strong></td><td>O contacto fantasma é removido imediatamente após a chamada</td></tr>
+</table>
+
+<div class="note">
+<strong>Ambas as opções têm um custo.</strong> Medido num Galaxy S10 com o marcador Samsung: ao eliminar o contacto fantasma, o nome em Recentes <strong>desaparece imediatamente</strong> e fica apenas o número. Esse marcador não usa o nome guardado no registo — resolve-o de cada vez a partir da agenda. Assim, «Eliminar» significa mesmo <em>sem rasto na agenda, mas também sem nome no registo</em>. É por isso que o valor predefinido é «Manter».
+</div>
+
+<p>O comportamento depende do marcador: um telefone diferente pode comportar-se ao contrário. O predefinido é escolhido para funcionar no pior caso.</p>
+
+<p>Para ocultar os contactos fantasma na app Contactos do telefone, desselecione a conta <code>it.phoneghost.local</code> em «Contactos a mostrar».</p>
+
+<h2 id="8">8. Idiomas e aspeto</h2>
+
+<p>A app fala <strong>seis idiomas</strong> — italiano, inglês, espanhol, francês, alemão, português — e segue o idioma do telefone; quem não fala nenhum dos seis vê o inglês.</p>
+
+<p>Tema <strong>claro e escuro</strong>, seguindo o sistema. No iPhone, alguns ecrãs usam controlos nativos do iOS.</p>
+
+<h2 id="9">9. O que a app não faz</h2>
+
+<ul>
+  <li><strong>Não escreve no registo de chamadas.</strong> Nenhuma das duas plataformas o permite a uma app distribuída nas lojas: os contactos fantasma existem precisamente para contornar esta limitação de forma lícita.</li>
+  <li><strong>Não pode usar uma fotografia qualquer como ícone da app.</strong> Ambas as plataformas apenas permitem escolher entre ícones incluídos na app no momento da compilação. A funcionalidade ainda não está activa.</li>
+  <li><strong>Não tem bloqueio por inactividade, bloqueio de capturas de ecrã nem saída rápida.</strong> Estavam previstos e os controlos foram removidos: mostrá-los sem os implementar teria sido uma falsa promessa de segurança.</li>
+  <li><strong>Não sincroniza nem faz cópias de segurança.</strong> Sem nuvem, sem conta.</li>
+  <li><strong>Sem favoritos nem grupos.</strong></li>
+</ul>
+
+<h3>Os limites da negabilidade, na íntegra</h3>
+
+<p>As agendas privadas ocultam <em>quais</em> espaços estão ocupados, e a contagem é misturada com espaços isco. Mas:</p>
+<ul>
+  <li>quem tem acesso a um dispositivo <strong>desbloqueado com permissões de root</strong> pode deduzir uma contagem (inflacionada pelos iscos) através do porta-chaves do sistema;</li>
+  <li>o <strong>espaço ocupado pela app cresce 64 KB por fotografia</strong>, e isso é legível nas definições do sistema sem qualquer ferramenta. Quem tiver uma cópia dos ficheiros fica a saber o <strong>número total de fotografias</strong> em todas as agendas — mas não a que agenda pertence cada uma, porque os nomes dos ficheiros são aleatórios e todos os ficheiros têm exactamente o mesmo tamanho.</li>
+</ul>
+
+<p>Não é um defeito a corrigir: é o limite declarado do que o projeto promete.</p>
+
+<footer>
+  <a href="https://maurik77.github.io/phoneghost-privacy/">Política de privacidade</a> &middot;
+  <a href="../">Todos os idiomas</a>
+</footer>
+
+</body>
+</html>

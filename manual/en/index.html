@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PhoneGhost — User Manual</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 800px; margin: 0 auto; padding: 1.5rem; color: #1a1a1a; background: #fff; line-height: 1.6; }
+  nav.langs { margin-bottom: 2rem; padding: 0.75rem 1rem; background: #f5f5f5; border-radius: 6px; font-size: 0.9rem; }
+  nav.langs a { margin-right: 0.75rem; text-decoration: none; color: #0066cc; }
+  nav.langs a:hover { text-decoration: underline; }
+  nav.langs a.current { font-weight: 700; color: #1a1a1a; pointer-events: none; }
+  h1 { font-size: 1.6rem; margin-bottom: 0.25rem; }
+  h2 { font-size: 1.25rem; margin-top: 2.5rem; border-bottom: 1px solid #e0e0e0; padding-bottom: 0.25rem; }
+  h3 { font-size: 1.05rem; margin-top: 1.75rem; }
+  nav.toc { background: #f9f9f9; border: 1px solid #e0e0e0; border-radius: 6px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+  nav.toc ol { margin: 0.5rem 0 0; padding-left: 1.25rem; }
+  nav.toc li { margin: 0.2rem 0; }
+  nav.toc a { color: #0066cc; text-decoration: none; font-size: 0.95rem; }
+  nav.toc a:hover { text-decoration: underline; }
+  .screenshots { display: flex; flex-wrap: wrap; gap: 12px; margin: 1rem 0; }
+  .screenshots img { width: calc(50% - 6px); max-width: 280px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+  @media (max-width: 500px) { .screenshots img { width: 100%; } }
+  .note { background: #fff8e1; border-left: 3px solid #f9a825; padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  .warn { background: #fff3e0; border-left: 3px solid #e65100; padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+  th, td { border: 1px solid #ddd; padding: 0.5rem 0.75rem; text-align: left; }
+  th { background: #f5f5f5; }
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0e0e0; font-size: 0.85rem; color: #666; }
+  footer a { color: #0066cc; }
+  a { color: #0066cc; }
+</style>
+</head>
+<body>
+
+<nav class="langs">
+  <strong>Language:</strong>
+  <a href="../it/">Italiano</a>
+  <a href="../en/" class="current">English</a>
+  <a href="../es/">Español</a>
+  <a href="../fr/">Français</a>
+  <a href="../de/">Deutsch</a>
+  <a href="../pt/">Português</a>
+</nav>
+
+<h1>PhoneGhost — User Manual</h1>
+
+<nav class="toc">
+  <strong>Contents</strong>
+  <ol>
+    <li><a href="#1">What it is</a></li>
+    <li><a href="#2">First launch</a></li>
+    <li><a href="#3">The public directory</a></li>
+    <li><a href="#4">Importing from your phone's contacts</a></li>
+    <li><a href="#5">Custom attributes</a></li>
+    <li><a href="#6">Private address books</a></li>
+    <li><a href="#7">Calls and ghost contacts</a></li>
+    <li><a href="#8">Languages and appearance</a></li>
+    <li><a href="#9">What the app doesn't do</a></li>
+  </ol>
+</nav>
+
+<h2 id="1">1. What it is</h2>
+
+<p>PhoneGhost is a <strong>second address book</strong>, separate from the phone's own, that can also host one or more <strong>encrypted private address books</strong>, each protected by a code you choose.</p>
+
+<p>Private address books are not a hidden feature: the app declares them openly, at first launch and in the store listings. What is hidden is <strong>how many exist and whether any exist at all</strong> — and this is not a presentational detail but the principle on which everything else is built. There is no list, no counter, no icon that lights up. Not even for you.</p>
+
+<h2 id="2">2. First launch</h2>
+
+<p>This happens once per installation and cannot be skipped.</p>
+
+<h3 id="2-1">2.1 The explanation</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/en/01-benvenuto.png" alt="Welcome screen">
+  <img src="../screenshots/en/02-benvenuto-seguito.png" alt="Explanation continued">
+</div>
+
+<p>This is the only point in the app where the mechanism is explained in full. The illustrations say without words what words explain poorly: a private address book's code typed in the search field opens <strong>that address book</strong>; the administrative code opens <strong>a menu</strong>, not an address book.</p>
+
+<p>The explanation remains reachable at any time from the administrative menu (§6.1): it is not a screen you see once and lose.</p>
+
+<h3 id="2-2">2.2 Preparing the encrypted archive</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/en/03-preparazione-archivio.png" alt="Preparation at 16%">
+  <img src="../screenshots/en/04-preparazione-archivio-avanzata.png" alt="Preparation at 61%">
+</div>
+
+<p>The app writes here the space that will host private address books — <strong>always the same amount</strong>, whether you create one, ten, or none. This is why the wait reveals nothing about you: the progress bar moves identically on every installation.</p>
+
+<p>This takes tens of seconds on a 2019 phone. The padlock fills along with the bar, and a reflection passes through it slowly — its purpose is to distinguish "still working" from "stuck", which is the only doubt this screen exists to remove.</p>
+
+<h3 id="2-3">2.3 The administrative code</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/en/05-codice-amministrativo.png" alt="Choosing the administrative code">
+  <img src="../screenshots/en/06-codice-amministrativo-impostato.png" alt="Administrative code confirmation">
+</div>
+
+<p>At least 8 characters, with at least one letter and one digit.</p>
+
+<div class="warn">
+<strong>It is permanent and unrecoverable</strong>: it cannot be changed, reset, or retrieved via a security question. If you forget it, you will no longer be able to create new private address books — those already created remain reachable with their own codes, which are separate from this one.
+</div>
+
+<p>The confirmation screen exists to say one thing — the one most often misunderstood: <strong>the administrative code opens a menu, not an address book.</strong></p>
+
+<h2 id="3">3. The public directory</h2>
+
+<div class="screenshots">
+  <img src="../screenshots/en/07-rubrica-vuota.png" alt="Empty directory">
+  <img src="../screenshots/en/10-lista-contatti.png" alt="Contact list">
+  <img src="../screenshots/en/11-scheda-contatto.png" alt="Contact card">
+</div>
+
+<p>An ordinary address book: alphabetically sorted list with section letters, initials avatar (colour derived from the name, not random or manually chosen), search, contact card, edit, delete.</p>
+
+<p><strong>Search ignores accents and capitalisation.</strong> Searching <code>nicolo</code> finds <em>Nicolò</em>, and vice versa: names are internally compared in a "folded" form. This applies to first name, last name, and company.</p>
+
+<p><strong>Deletion asks for confirmation</strong> via a dialog and is not reversible: inside a private address book there is no system copy from which to recover.</p>
+
+<h3 id="3-1">3.1 Creating and editing a contact</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/en/08-nuovo-contatto.png" alt="Empty editor">
+  <img src="../screenshots/en/09-nuovo-contatto-compilato.png" alt="Filled editor">
+</div>
+
+<p>First name, last name, company, role, <strong>multiple phone numbers</strong> and <strong>multiple email addresses</strong>, each with its own label (mobile, home, work, or a custom one). "Add number" and "Add email" create an additional row.</p>
+
+<p>The <strong>photo</strong> is tapped at the top: take a picture with the camera or choose from the gallery. It is resized and saved encrypted in a separate file; if permission is denied, the app says so instead of failing silently.</p>
+
+<div class="note">
+<strong>Known limitation.</strong> On the contact card, only the <strong>first phone number</strong> is callable, and nothing indicates this: tapping a second number does nothing. This is a registered defect, not intended behaviour.
+</div>
+
+<h2 id="4">4. Importing from your phone's contacts</h2>
+
+<div class="screenshots">
+  <img src="../screenshots/en/07-rubrica-vuota.png" alt="Import prompt on empty directory">
+  <img src="../screenshots/en/12-impostazioni.png" alt="Import in settings">
+</div>
+
+<p>Import lives in <strong>two places</strong>, answering two different needs:</p>
+<ul>
+  <li>above the list, until an import has never been attempted — for people opening the app for the first time;</li>
+  <li>in <strong>settings</strong>, always — for people who want to repeat it.</li>
+</ul>
+
+<p><strong>It can be repeated as many times as you like.</strong> Already-present contacts are recognised and skipped, so the directory does not double. Recognition works as follows:</p>
+<ul>
+  <li>if the phone contact has at least one number, it is "already present" when <strong>at least one of its numbers</strong> is already in the directory;</li>
+  <li>if it has no usable numbers, when <strong>the name matches</strong> (ignoring accents and capitalisation).</li>
+</ul>
+
+<p>Number takes priority over name intentionally: two different people can share the same name, and the opposite rule would silently delete one of them.</p>
+
+<p><strong>Skips, does not update.</strong> An already-present contact is not overwritten with phone data: changes made inside PhoneGhost — labels, custom attributes, aliases — remain yours. The accepted consequence is that if you change someone's number <em>on the phone</em>, a new import adds them as a new contact instead of updating the existing one.</p>
+
+<p>At the end of an import the app <strong>always</strong> reports what happened, even when there was nothing to do ("No new contacts to import"), because an import that finds nothing and one that never started would otherwise look identical.</p>
+
+<p><strong>Import exists only on the public directory.</strong> Private address books never import from the system address book.</p>
+
+<h2 id="5">5. Custom attributes</h2>
+
+<p>Extra fields, defined by you, <strong>different for each directory</strong>: those from the public directory do not exist inside a private one and vice versa.</p>
+
+<h3 id="5-1">5.1 Defining them</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/en/13-attributi-nessuno.png" alt="No attributes">
+  <img src="../screenshots/en/14-nuovo-attributo.png" alt="New attribute">
+  <img src="../screenshots/en/15-nuovo-attributo-nome.png" alt="Attribute name">
+  <img src="../screenshots/en/16-tipi-di-attributo.png" alt="The four types">
+  <img src="../screenshots/en/17-attributi-definiti.png" alt="Two attributes defined">
+</div>
+
+<p>Four types: <strong>Text</strong> (up to 200 characters), <strong>Long text</strong>, <strong>Rating 1–5</strong> (stars), and <strong>Date</strong>.</p>
+
+<p>Names must be distinct, and comparison ignores accents and capitalisation: "City" and "Cïty" would be the same attribute, not two.</p>
+
+<h3 id="5-2">5.2 Choosing one to show in the list</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/en/18-scelta-del-sottotitolo.png" alt="Choosing the subtitle">
+  <img src="../screenshots/en/22-lista-con-sottotitolo.png" alt="List with subtitle">
+</div>
+
+<p>One attribute — only one — can become the <strong>subtitle</strong> of each row in the directory. This makes the list readable when names alone are not enough to tell people apart.</p>
+
+<h3 id="5-3">5.3 Filling and viewing them</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/en/19-editor-con-attributi.png" alt="Editor with attributes">
+  <img src="../screenshots/en/20-editor-attributi-compilati.png" alt="Attributes filled">
+  <img src="../screenshots/en/21-scheda-con-attributi.png" alt="Card with attributes">
+</div>
+
+<p>Defined attributes appear at the bottom of the editor for <strong>every</strong> contact in that directory, with the appropriate control for the type. Filled values are visible in the contact card.</p>
+
+<p>Deleting an attribute also deletes the values contacts had for that field, and the confirmation dialog says so.</p>
+
+<h2 id="6">6. Private address books</h2>
+
+<h3 id="6-1">6.1 The administrative menu</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/en/23-menu-amministrazione.png" alt="Administrative menu">
+</div>
+
+<p>It opens by typing the <strong>administrative code</strong> in the directory's search field and pressing enter. There is no other way: no button, no menu entry, no secret gesture.</p>
+
+<p>Three entries: create a new private address book, re-read the first-launch explanation, and change the app icon — the last announced but <strong>not yet implemented</strong>.</p>
+
+<h3 id="6-2">6.2 Creating one</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/en/24-nuova-rubrica-privata.png" alt="New private address book">
+  <img src="../screenshots/en/25-rubrica-privata-creata.png" alt="Private address book created">
+</div>
+
+<p>The code you choose <strong>is</strong> the key used to encrypt the address book. It is not saved anywhere: the key is derived from the stored data, never the code itself.</p>
+
+<p>The rules are the same as for the administrative code (8+ characters, at least one letter and one digit). If the code is not acceptable the app says only "Invalid code": it does not say <strong>why</strong>, and in particular it never says "this code is already in use" — saying that would reveal that another address book exists.</p>
+
+<div class="warn">
+<strong>The code is unrecoverable.</strong> There is no reset, no content recovery. The padlock that closes between the two screens is not decoration: it is the only difference between "you still need to choose a code" and "encryption has taken place".
+</div>
+
+<h3 id="6-3">6.3 Opening and using one</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/en/26-rubrica-privata-aperta.png" alt="Private address book open">
+  <img src="../screenshots/en/27-rubrica-privata-con-contatti.png" alt="Private address book with contacts">
+</div>
+
+<p>Type its code in the search field and press enter: a private address book replaces the public list. This is the only way.</p>
+
+<p>The only sign that you are inside a private address book is the <strong>small padlock</strong> next to the title — deliberately discreet: someone looking at the screen from a distance sees an address book.</p>
+
+<p>Everything works the same as in the public directory: contacts, search, photos, attributes. Pressing Back closes the address book and its database.</p>
+
+<p>Two declared limitations:</p>
+<ul>
+  <li><strong>from inside a private address book you cannot open another one</strong>: the search field there only searches;</li>
+  <li><strong>there is no system import</strong> (§4).</li>
+</ul>
+
+<h3 id="6-4">6.4 Settings of a private address book</h3>
+
+<div class="screenshots">
+  <img src="../screenshots/en/28-impostazioni-rubrica-privata.png" alt="Private address book settings">
+</div>
+
+<p>The <strong>public</strong> directory has import and no ghost-contact policy; a <strong>private</strong> address book is the exact opposite — no import, but with the ghost-contact management option (§7).</p>
+
+<h2 id="7">7. Calls and ghost contacts</h2>
+
+<p>When you call a contact from a private address book, their name does not exist as far as the system is concerned — it would appear as a bare number in Recents. PhoneGhost therefore creates, a moment before dialling, a <strong>ghost contact</strong> in the system address book with the alias you chose, so the call log shows a name.</p>
+
+<p>The <strong>alias</strong> is set in the contact editor, and the field appears <strong>only inside a private address book</strong>: in the public directory it makes no sense, because those contacts are not private.</p>
+
+<p>The "Ghost contact after call" setting (§6.4) decides what happens to that contact:</p>
+
+<table>
+<tr><th>Setting</th><th>Effect</th></tr>
+<tr><td><strong>Keep contact</strong> (default)</td><td>The ghost contact stays in the system address book, and the name continues to appear in Recents</td></tr>
+<tr><td><strong>Delete contact</strong></td><td>The ghost contact is removed immediately after the call</td></tr>
+</table>
+
+<div class="note">
+<strong>Both choices have a cost.</strong> Measured on a Galaxy S10 with the Samsung dialler: deleting the ghost contact causes the name in Recents to <strong>disappear immediately</strong>, leaving only the number. That dialler does not use the name stored in the call log — it resolves it live from the address book each time. So "Delete" really means <em>no trace in the address book, but no name in Recents either</em>. That is why the default is "Keep".
+</div>
+
+<p>Behaviour depends on the dialler: a different phone could behave the opposite way. The default is chosen to hold in the worst case.</p>
+
+<p>To hide ghost contacts in the phone's Contacts app, deselect the account <code>it.phoneghost.local</code> under "Contacts to display".</p>
+
+<h2 id="8">8. Languages and appearance</h2>
+
+<p>The app speaks <strong>six languages</strong> — Italian, English, Spanish, French, German, Portuguese — and follows the phone's language; those who speak none of the six see English.</p>
+
+<p><strong>Light and dark</strong> theme, following the system. On iPhone, some screens use native iOS controls.</p>
+
+<h2 id="9">9. What the app doesn't do</h2>
+
+<ul>
+  <li><strong>It does not write to the call log.</strong> Neither platform allows a store-distributed app to do this: ghost contacts exist precisely to work around this limitation lawfully.</li>
+  <li><strong>It cannot use an arbitrary photo as the app icon.</strong> Both platforms only allow choosing from icons bundled in the app at build time. The feature is not yet active.</li>
+  <li><strong>It has no inactivity lock, no screenshot block, and no quick-exit.</strong> These were planned and the controls were removed: showing them without implementing them would have been a false promise of security.</li>
+  <li><strong>It does not sync and does not back up.</strong> No cloud, no account.</li>
+  <li><strong>No favourites, no groups.</strong></li>
+</ul>
+
+<h3>The limits of deniability, in full</h3>
+
+<p>Private address books hide <em>which</em> storage slots are occupied, and the count is blended with decoy slots. But:</p>
+<ul>
+  <li>someone with access to a <strong>unlocked, rooted device</strong> can deduce a (decoy-inflated) count through the system keychain;</li>
+  <li>the <strong>app's storage grows by 64 KB per photo</strong>, and this is readable in System Settings without any tools. Someone who has a copy of the files learns the <strong>total number of photos</strong> across all address books — but not which address book owns any of them, because file names are random and every file is exactly the same size.</li>
+</ul>
+
+<p>This is not a bug to fix: it is the declared boundary of what the project promises.</p>
+
+<footer>
+  <a href="https://maurik77.github.io/phoneghost-privacy/">Privacy Policy</a> &middot;
+  <a href="../">All languages</a>
+</footer>
+
+</body>
+</html>

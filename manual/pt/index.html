@@ -29,6 +29,11 @@
   footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0e0e0; font-size: 0.85rem; color: #666; }
   footer a { color: #0066cc; }
   a { color: #0066cc; }
+  .os-toggle { display: flex; gap: 8px; margin: 0 0 1.5rem; align-items: center; }
+  .os-toggle span { font-size: 0.9rem; color: #555; margin-right: 4px; }
+  .os-toggle button { padding: 5px 16px; border: 1px solid #0066cc; border-radius: 20px; background: #fff; color: #0066cc; cursor: pointer; font-size: 0.9rem; }
+  .os-toggle button.active { background: #0066cc; color: #fff; }
+  .screenshots img.android { display: none; }
 </style>
 </head>
 <body>
@@ -43,6 +48,15 @@
   <a href="../pt/" class="current">Português</a>
 </nav>
 
+<div class="os-toggle"><span>Capturas:</span><button id="btn-ios" class="active" onclick="setOS('ios')">iOS</button><button id="btn-android" onclick="setOS('android')">Android</button></div>
+<script>
+function setOS(os){
+  document.querySelectorAll('.screenshots img.ios').forEach(function(el){el.style.display=os==='ios'?'':'none';});
+  document.querySelectorAll('.screenshots img.android').forEach(function(el){el.style.display=os==='android'?'':'none';});
+  document.getElementById('btn-ios').classList.toggle('active',os==='ios');
+  document.getElementById('btn-android').classList.toggle('active',os==='android');
+}
+</script>
 <h1>PhoneGhost — Manual do utilizador</h1>
 
 <nav class="toc">
@@ -73,8 +87,10 @@
 <h3 id="2-1">2.1 A explicação</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/pt/01-benvenuto.png" alt="Ecrã de boas-vindas">
-  <img src="../screenshots/pt/02-benvenuto-seguito.png" alt="Explicação (continuação)">
+  <img class="ios" src="../screenshots/pt/01-benvenuto.png" alt="Ecrã de boas-vindas">
+  <img class="android" src="../screenshots/android-pt/01-benvenuto.png" alt="Ecrã de boas-vindas">
+  <img class="ios" src="../screenshots/pt/02-benvenuto-seguito.png" alt="Explicação (continuação)">
+  <img class="android" src="../screenshots/android-pt/02-benvenuto-seguito.png" alt="Explicação (continuação)">
 </div>
 
 <p>É o único ponto da app em que o mecanismo é explicado na íntegra. As ilustrações dizem sem palavras o que as palavras explicam mal: o código de uma agenda privada digitado na pesquisa abre <strong>essa agenda</strong>; o código administrativo abre <strong>um menu</strong>, não uma agenda.</p>
@@ -84,8 +100,10 @@
 <h3 id="2-2">2.2 Preparação do arquivo cifrado</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/pt/03-preparazione-archivio.png" alt="Preparação a 16 %">
-  <img src="../screenshots/pt/04-preparazione-archivio-avanzata.png" alt="Preparação a 61 %">
+  <img class="ios" src="../screenshots/pt/03-preparazione-archivio.png" alt="Preparação a 16 %">
+  <img class="android" src="../screenshots/android-pt/03-preparazione-archivio.png" alt="Preparação a 16 %">
+  <img class="ios" src="../screenshots/pt/04-preparazione-archivio-avanzata.png" alt="Preparação a 61 %">
+  <img class="android" src="../screenshots/android-pt/04-preparazione-archivio-avanzata.png" alt="Preparação a 61 %">
 </div>
 
 <p>A app escreve aqui o espaço que albergará as agendas privadas — <strong>sempre o mesmo</strong>, quer crie uma, dez ou nenhuma. É por isso que a espera não revela nada sobre si: a barra de progresso avança de forma idêntica em cada instalação.</p>
@@ -95,8 +113,10 @@
 <h3 id="2-3">2.3 O código administrativo</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/pt/05-codice-amministrativo.png" alt="Escolha do código administrativo">
-  <img src="../screenshots/pt/06-codice-amministrativo-impostato.png" alt="Confirmação do código administrativo">
+  <img class="ios" src="../screenshots/pt/05-codice-amministrativo.png" alt="Escolha do código administrativo">
+  <img class="android" src="../screenshots/android-pt/05-codice-amministrativo.png" alt="Escolha do código administrativo">
+  <img class="ios" src="../screenshots/pt/06-codice-amministrativo-impostato.png" alt="Confirmação do código administrativo">
+  <img class="android" src="../screenshots/android-pt/06-codice-amministrativo-impostato.png" alt="Confirmação do código administrativo">
 </div>
 
 <p>Pelo menos 8 caracteres, com pelo menos uma letra e um algarismo.</p>
@@ -110,9 +130,12 @@
 <h2 id="3">3. A agenda pública</h2>
 
 <div class="screenshots">
-  <img src="../screenshots/pt/07-rubrica-vuota.png" alt="Agenda vazia">
-  <img src="../screenshots/pt/10-lista-contatti.png" alt="Lista de contactos">
-  <img src="../screenshots/pt/11-scheda-contatto.png" alt="Ficha de contacto">
+  <img class="ios" src="../screenshots/pt/07-rubrica-vuota.png" alt="Agenda vazia">
+  <img class="android" src="../screenshots/android-pt/07-rubrica-vuota.png" alt="Agenda vazia">
+  <img class="ios" src="../screenshots/pt/10-lista-contatti.png" alt="Lista de contactos">
+  <img class="android" src="../screenshots/android-pt/10-lista-contatti.png" alt="Lista de contactos">
+  <img class="ios" src="../screenshots/pt/11-scheda-contatto.png" alt="Ficha de contacto">
+  <img class="android" src="../screenshots/android-pt/11-scheda-contatto.png" alt="Ficha de contacto">
 </div>
 
 <p>Uma agenda comum: lista ordenada alfabeticamente com letras de secção, avatar com iniciais (a cor deriva do nome, não é aleatória nem escolhida manualmente), pesquisa, ficha, edição, eliminação.</p>
@@ -124,8 +147,10 @@
 <h3 id="3-1">3.1 Criar e editar um contacto</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/pt/08-nuovo-contatto.png" alt="Editor vazio">
-  <img src="../screenshots/pt/09-nuovo-contatto-compilato.png" alt="Editor preenchido">
+  <img class="ios" src="../screenshots/pt/08-nuovo-contatto.png" alt="Editor vazio">
+  <img class="android" src="../screenshots/android-pt/08-nuovo-contatto.png" alt="Editor vazio">
+  <img class="ios" src="../screenshots/pt/09-nuovo-contatto-compilato.png" alt="Editor preenchido">
+  <img class="android" src="../screenshots/android-pt/09-nuovo-contatto-compilato.png" alt="Editor preenchido">
 </div>
 
 <p>Nome próprio, apelido, empresa, função, <strong>vários números de telefone</strong> e <strong>vários endereços de e-mail</strong>, cada um com a sua própria etiqueta (telemóvel, casa, trabalho, ou uma etiqueta personalizada). «Adicionar número» e «Adicionar e-mail» criam uma linha adicional.</p>
@@ -139,8 +164,10 @@
 <h2 id="4">4. Importar da agenda do telefone</h2>
 
 <div class="screenshots">
-  <img src="../screenshots/pt/07-rubrica-vuota.png" alt="Convite para importar na agenda vazia">
-  <img src="../screenshots/pt/12-impostazioni.png" alt="Importar nas definições">
+  <img class="ios" src="../screenshots/pt/07-rubrica-vuota.png" alt="Convite para importar na agenda vazia">
+  <img class="android" src="../screenshots/android-pt/07-rubrica-vuota.png" alt="Convite para importar na agenda vazia">
+  <img class="ios" src="../screenshots/pt/12-impostazioni.png" alt="Importar nas definições">
+  <img class="android" src="../screenshots/android-pt/12-impostazioni.png" alt="Importar nas definições">
 </div>
 
 <p>A importação existe em <strong>dois locais</strong>, respondendo a duas necessidades distintas:</p>
@@ -170,11 +197,16 @@
 <h3 id="5-1">5.1 Defini-los</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/pt/13-attributi-nessuno.png" alt="Sem atributos">
-  <img src="../screenshots/pt/14-nuovo-attributo.png" alt="Novo atributo">
-  <img src="../screenshots/pt/15-nuovo-attributo-nome.png" alt="Nome do atributo">
-  <img src="../screenshots/pt/16-tipi-di-attributo.png" alt="Os quatro tipos">
-  <img src="../screenshots/pt/17-attributi-definiti.png" alt="Dois atributos definidos">
+  <img class="ios" src="../screenshots/pt/13-attributi-nessuno.png" alt="Sem atributos">
+  <img class="android" src="../screenshots/android-pt/13-attributi-nessuno.png" alt="Sem atributos">
+  <img class="ios" src="../screenshots/pt/14-nuovo-attributo.png" alt="Novo atributo">
+  <img class="android" src="../screenshots/android-pt/14-nuovo-attributo.png" alt="Novo atributo">
+  <img class="ios" src="../screenshots/pt/15-nuovo-attributo-nome.png" alt="Nome do atributo">
+  <img class="android" src="../screenshots/android-pt/15-nuovo-attributo-nome.png" alt="Nome do atributo">
+  <img class="ios" src="../screenshots/pt/16-tipi-di-attributo.png" alt="Os quatro tipos">
+  <img class="android" src="../screenshots/android-pt/16-tipi-di-attributo.png" alt="Os quatro tipos">
+  <img class="ios" src="../screenshots/pt/17-attributi-definiti.png" alt="Dois atributos definidos">
+  <img class="android" src="../screenshots/android-pt/17-attributi-definiti.png" alt="Dois atributos definidos">
 </div>
 
 <p>Quatro tipos: <strong>Texto</strong> (até 200 caracteres), <strong>Texto longo</strong>, <strong>Avaliação 1–5</strong> (estrelas) e <strong>Data</strong>.</p>
@@ -184,8 +216,10 @@
 <h3 id="5-2">5.2 Escolher um para mostrar na lista</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/pt/18-scelta-del-sottotitolo.png" alt="Escolha do subtítulo">
-  <img src="../screenshots/pt/22-lista-con-sottotitolo.png" alt="Lista com subtítulo">
+  <img class="ios" src="../screenshots/pt/18-scelta-del-sottotitolo.png" alt="Escolha do subtítulo">
+  <img class="android" src="../screenshots/android-pt/18-scelta-del-sottotitolo.png" alt="Escolha do subtítulo">
+  <img class="ios" src="../screenshots/pt/22-lista-con-sottotitolo.png" alt="Lista com subtítulo">
+  <img class="android" src="../screenshots/android-pt/22-lista-con-sottotitolo.png" alt="Lista com subtítulo">
 </div>
 
 <p>Um atributo — apenas um — pode tornar-se o <strong>subtítulo</strong> das linhas da agenda. Serve para tornar a lista legível quando os nomes não são suficientes para distinguir as pessoas.</p>
@@ -193,9 +227,12 @@
 <h3 id="5-3">5.3 Preenchê-los e vê-los</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/pt/19-editor-con-attributi.png" alt="Editor com atributos">
-  <img src="../screenshots/pt/20-editor-attributi-compilati.png" alt="Atributos preenchidos">
-  <img src="../screenshots/pt/21-scheda-con-attributi.png" alt="Ficha com atributos">
+  <img class="ios" src="../screenshots/pt/19-editor-con-attributi.png" alt="Editor com atributos">
+  <img class="android" src="../screenshots/android-pt/19-editor-con-attributi.png" alt="Editor com atributos">
+  <img class="ios" src="../screenshots/pt/20-editor-attributi-compilati.png" alt="Atributos preenchidos">
+  <img class="android" src="../screenshots/android-pt/20-editor-attributi-compilati.png" alt="Atributos preenchidos">
+  <img class="ios" src="../screenshots/pt/21-scheda-con-attributi.png" alt="Ficha com atributos">
+  <img class="android" src="../screenshots/android-pt/21-scheda-con-attributi.png" alt="Ficha com atributos">
 </div>
 
 <p>Os atributos definidos aparecem no final do editor de <strong>cada</strong> contacto dessa agenda, com o controlo adequado ao tipo. Os valores preenchidos são visíveis na ficha.</p>
@@ -207,7 +244,8 @@
 <h3 id="6-1">6.1 O menu administrativo</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/pt/23-menu-amministrazione.png" alt="Menu administrativo">
+  <img class="ios" src="../screenshots/pt/23-menu-amministrazione.png" alt="Menu administrativo">
+  <img class="android" src="../screenshots/android-pt/23-menu-amministrazione.png" alt="Menu administrativo">
 </div>
 
 <p>Abre-se digitando o <strong>código administrativo</strong> no campo de pesquisa da agenda e premindo enter. Não há nenhuma outra via: nenhum botão, nenhuma entrada de menu, nenhum gesto secreto.</p>
@@ -217,8 +255,10 @@
 <h3 id="6-2">6.2 Criar uma</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/pt/24-nuova-rubrica-privata.png" alt="Nova agenda privada">
-  <img src="../screenshots/pt/25-rubrica-privata-creata.png" alt="Agenda privada criada">
+  <img class="ios" src="../screenshots/pt/24-nuova-rubrica-privata.png" alt="Nova agenda privada">
+  <img class="android" src="../screenshots/android-pt/24-nuova-rubrica-privata.png" alt="Nova agenda privada">
+  <img class="ios" src="../screenshots/pt/25-rubrica-privata-creata.png" alt="Agenda privada criada">
+  <img class="android" src="../screenshots/android-pt/25-rubrica-privata-creata.png" alt="Agenda privada criada">
 </div>
 
 <p>O código que escolhe <strong>é</strong> a chave com que a agenda é cifrada. Não é guardado em lado nenhum: a chave é derivada dos dados armazenados, nunca o próprio código.</p>
@@ -232,8 +272,10 @@
 <h3 id="6-3">6.3 Abri-la e usá-la</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/pt/26-rubrica-privata-aperta.png" alt="Agenda privada aberta">
-  <img src="../screenshots/pt/27-rubrica-privata-con-contatti.png" alt="Agenda privada com contactos">
+  <img class="ios" src="../screenshots/pt/26-rubrica-privata-aperta.png" alt="Agenda privada aberta">
+  <img class="android" src="../screenshots/android-pt/26-rubrica-privata-aperta.png" alt="Agenda privada aberta">
+  <img class="ios" src="../screenshots/pt/27-rubrica-privata-con-contatti.png" alt="Agenda privada com contactos">
+  <img class="android" src="../screenshots/android-pt/27-rubrica-privata-con-contatti.png" alt="Agenda privada com contactos">
 </div>
 
 <p>Digite o código no campo de pesquisa e prima enter: a agenda privada substitui a lista pública. Esta é a única forma.</p>
@@ -251,7 +293,8 @@
 <h3 id="6-4">6.4 Definições de uma agenda privada</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/pt/28-impostazioni-rubrica-privata.png" alt="Definições da agenda privada">
+  <img class="ios" src="../screenshots/pt/28-impostazioni-rubrica-privata.png" alt="Definições da agenda privada">
+  <img class="android" src="../screenshots/android-pt/28-impostazioni-rubrica-privata.png" alt="Definições da agenda privada">
 </div>
 
 <p>A agenda <strong>pública</strong> tem importação e não tem política de contacto fantasma; uma agenda <strong>privada</strong> é exactamente o contrário — sem importação, mas com a opção de gestão do contacto fantasma (§7).</p>

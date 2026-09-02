@@ -29,6 +29,11 @@
   footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0e0e0; font-size: 0.85rem; color: #666; }
   footer a { color: #0066cc; }
   a { color: #0066cc; }
+  .os-toggle { display: flex; gap: 8px; margin: 0 0 1.5rem; align-items: center; }
+  .os-toggle span { font-size: 0.9rem; color: #555; margin-right: 4px; }
+  .os-toggle button { padding: 5px 16px; border: 1px solid #0066cc; border-radius: 20px; background: #fff; color: #0066cc; cursor: pointer; font-size: 0.9rem; }
+  .os-toggle button.active { background: #0066cc; color: #fff; }
+  .screenshots img.android { display: none; }
 </style>
 </head>
 <body>
@@ -43,6 +48,15 @@
   <a href="../pt/">Português</a>
 </nav>
 
+<div class="os-toggle"><span>Captures&nbsp;:</span><button id="btn-ios" class="active" onclick="setOS('ios')">iOS</button><button id="btn-android" onclick="setOS('android')">Android</button></div>
+<script>
+function setOS(os){
+  document.querySelectorAll('.screenshots img.ios').forEach(function(el){el.style.display=os==='ios'?'':'none';});
+  document.querySelectorAll('.screenshots img.android').forEach(function(el){el.style.display=os==='android'?'':'none';});
+  document.getElementById('btn-ios').classList.toggle('active',os==='ios');
+  document.getElementById('btn-android').classList.toggle('active',os==='android');
+}
+</script>
 <h1>PhoneGhost — Manuel d'utilisation</h1>
 
 <nav class="toc">
@@ -73,8 +87,10 @@
 <h3 id="2-1">2.1 L'explication</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/fr/01-benvenuto.png" alt="Écran de bienvenue">
-  <img src="../screenshots/fr/02-benvenuto-seguito.png" alt="Explication (suite)">
+  <img class="ios" src="../screenshots/fr/01-benvenuto.png" alt="Écran de bienvenue">
+  <img class="android" src="../screenshots/android-fr/01-benvenuto.png" alt="Écran de bienvenue">
+  <img class="ios" src="../screenshots/fr/02-benvenuto-seguito.png" alt="Explication (suite)">
+  <img class="android" src="../screenshots/android-fr/02-benvenuto-seguito.png" alt="Explication (suite)">
 </div>
 
 <p>C'est le seul endroit de l'application où le mécanisme est expliqué en entier. Les illustrations disent sans mots ce que les mots expliquent mal : le code d'un répertoire privé tapé dans la recherche ouvre <strong>ce répertoire</strong> ; le code administratif ouvre <strong>un menu</strong>, pas un répertoire.</p>
@@ -84,8 +100,10 @@
 <h3 id="2-2">2.2 Préparation de l'archive chiffrée</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/fr/03-preparazione-archivio.png" alt="Préparation à 16 %">
-  <img src="../screenshots/fr/04-preparazione-archivio-avanzata.png" alt="Préparation à 61 %">
+  <img class="ios" src="../screenshots/fr/03-preparazione-archivio.png" alt="Préparation à 16 %">
+  <img class="android" src="../screenshots/android-fr/03-preparazione-archivio.png" alt="Préparation à 16 %">
+  <img class="ios" src="../screenshots/fr/04-preparazione-archivio-avanzata.png" alt="Préparation à 61 %">
+  <img class="android" src="../screenshots/android-fr/04-preparazione-archivio-avanzata.png" alt="Préparation à 61 %">
 </div>
 
 <p>L'application écrit ici l'espace qui hébergera les répertoires privés — <strong>toujours le même</strong>, que vous en créiez un, dix ou aucun. C'est pourquoi l'attente ne révèle rien sur vous : la barre de progression avance de façon identique à chaque installation.</p>
@@ -95,8 +113,10 @@
 <h3 id="2-3">2.3 Le code administratif</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/fr/05-codice-amministrativo.png" alt="Choix du code administratif">
-  <img src="../screenshots/fr/06-codice-amministrativo-impostato.png" alt="Confirmation du code administratif">
+  <img class="ios" src="../screenshots/fr/05-codice-amministrativo.png" alt="Choix du code administratif">
+  <img class="android" src="../screenshots/android-fr/05-codice-amministrativo.png" alt="Choix du code administratif">
+  <img class="ios" src="../screenshots/fr/06-codice-amministrativo-impostato.png" alt="Confirmation du code administratif">
+  <img class="android" src="../screenshots/android-fr/06-codice-amministrativo-impostato.png" alt="Confirmation du code administratif">
 </div>
 
 <p>Au moins 8 caractères, avec au moins une lettre et un chiffre.</p>
@@ -110,9 +130,12 @@
 <h2 id="3">3. Le répertoire public</h2>
 
 <div class="screenshots">
-  <img src="../screenshots/fr/07-rubrica-vuota.png" alt="Répertoire vide">
-  <img src="../screenshots/fr/10-lista-contatti.png" alt="Liste des contacts">
-  <img src="../screenshots/fr/11-scheda-contatto.png" alt="Fiche contact">
+  <img class="ios" src="../screenshots/fr/07-rubrica-vuota.png" alt="Répertoire vide">
+  <img class="android" src="../screenshots/android-fr/07-rubrica-vuota.png" alt="Répertoire vide">
+  <img class="ios" src="../screenshots/fr/10-lista-contatti.png" alt="Liste des contacts">
+  <img class="android" src="../screenshots/android-fr/10-lista-contatti.png" alt="Liste des contacts">
+  <img class="ios" src="../screenshots/fr/11-scheda-contatto.png" alt="Fiche contact">
+  <img class="android" src="../screenshots/android-fr/11-scheda-contatto.png" alt="Fiche contact">
 </div>
 
 <p>Un répertoire ordinaire : liste triée alphabétiquement avec des lettres de section, avatar avec les initiales (la couleur est dérivée du nom, elle n'est pas aléatoire ni choisie manuellement), recherche, fiche, modification, suppression.</p>
@@ -124,8 +147,10 @@
 <h3 id="3-1">3.1 Créer et modifier un contact</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/fr/08-nuovo-contatto.png" alt="Éditeur vide">
-  <img src="../screenshots/fr/09-nuovo-contatto-compilato.png" alt="Éditeur rempli">
+  <img class="ios" src="../screenshots/fr/08-nuovo-contatto.png" alt="Éditeur vide">
+  <img class="android" src="../screenshots/android-fr/08-nuovo-contatto.png" alt="Éditeur vide">
+  <img class="ios" src="../screenshots/fr/09-nuovo-contatto-compilato.png" alt="Éditeur rempli">
+  <img class="android" src="../screenshots/android-fr/09-nuovo-contatto-compilato.png" alt="Éditeur rempli">
 </div>
 
 <p>Prénom, nom, entreprise, rôle, <strong>plusieurs numéros de téléphone</strong> et <strong>plusieurs adresses e-mail</strong>, chacun avec sa propre étiquette (mobile, domicile, travail, ou une étiquette personnalisée). « Ajouter un numéro » et « Ajouter un e-mail » créent une ligne supplémentaire.</p>
@@ -139,8 +164,10 @@
 <h2 id="4">4. Importer depuis les contacts du téléphone</h2>
 
 <div class="screenshots">
-  <img src="../screenshots/fr/07-rubrica-vuota.png" alt="Invitation à importer sur le répertoire vide">
-  <img src="../screenshots/fr/12-impostazioni.png" alt="Import dans les paramètres">
+  <img class="ios" src="../screenshots/fr/07-rubrica-vuota.png" alt="Invitation à importer sur le répertoire vide">
+  <img class="android" src="../screenshots/android-fr/07-rubrica-vuota.png" alt="Invitation à importer sur le répertoire vide">
+  <img class="ios" src="../screenshots/fr/12-impostazioni.png" alt="Import dans les paramètres">
+  <img class="android" src="../screenshots/android-fr/12-impostazioni.png" alt="Import dans les paramètres">
 </div>
 
 <p>L'importation se trouve en <strong>deux endroits</strong>, répondant à deux besoins différents :</p>
@@ -170,11 +197,16 @@
 <h3 id="5-1">5.1 Les définir</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/fr/13-attributi-nessuno.png" alt="Aucun attribut">
-  <img src="../screenshots/fr/14-nuovo-attributo.png" alt="Nouvel attribut">
-  <img src="../screenshots/fr/15-nuovo-attributo-nome.png" alt="Nom de l'attribut">
-  <img src="../screenshots/fr/16-tipi-di-attributo.png" alt="Les quatre types">
-  <img src="../screenshots/fr/17-attributi-definiti.png" alt="Deux attributs définis">
+  <img class="ios" src="../screenshots/fr/13-attributi-nessuno.png" alt="Aucun attribut">
+  <img class="android" src="../screenshots/android-fr/13-attributi-nessuno.png" alt="Aucun attribut">
+  <img class="ios" src="../screenshots/fr/14-nuovo-attributo.png" alt="Nouvel attribut">
+  <img class="android" src="../screenshots/android-fr/14-nuovo-attributo.png" alt="Nouvel attribut">
+  <img class="ios" src="../screenshots/fr/15-nuovo-attributo-nome.png" alt="Nom de l'attribut">
+  <img class="android" src="../screenshots/android-fr/15-nuovo-attributo-nome.png" alt="Nom de l'attribut">
+  <img class="ios" src="../screenshots/fr/16-tipi-di-attributo.png" alt="Les quatre types">
+  <img class="android" src="../screenshots/android-fr/16-tipi-di-attributo.png" alt="Les quatre types">
+  <img class="ios" src="../screenshots/fr/17-attributi-definiti.png" alt="Deux attributs définis">
+  <img class="android" src="../screenshots/android-fr/17-attributi-definiti.png" alt="Deux attributs définis">
 </div>
 
 <p>Quatre types : <strong>Texte</strong> (jusqu'à 200 caractères), <strong>Texte long</strong>, <strong>Note 1-5</strong> (étoiles) et <strong>Date</strong>.</p>
@@ -184,8 +216,10 @@
 <h3 id="5-2">5.2 En choisir un à afficher dans la liste</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/fr/18-scelta-del-sottotitolo.png" alt="Choix du sous-titre">
-  <img src="../screenshots/fr/22-lista-con-sottotitolo.png" alt="Liste avec sous-titre">
+  <img class="ios" src="../screenshots/fr/18-scelta-del-sottotitolo.png" alt="Choix du sous-titre">
+  <img class="android" src="../screenshots/android-fr/18-scelta-del-sottotitolo.png" alt="Choix du sous-titre">
+  <img class="ios" src="../screenshots/fr/22-lista-con-sottotitolo.png" alt="Liste avec sous-titre">
+  <img class="android" src="../screenshots/android-fr/22-lista-con-sottotitolo.png" alt="Liste avec sous-titre">
 </div>
 
 <p>Un attribut — un seul — peut devenir le <strong>sous-titre</strong> des lignes du répertoire. Cela permet de rendre la liste lisible quand les noms ne suffisent pas à distinguer les personnes.</p>
@@ -193,9 +227,12 @@
 <h3 id="5-3">5.3 Les remplir et les voir</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/fr/19-editor-con-attributi.png" alt="Éditeur avec attributs">
-  <img src="../screenshots/fr/20-editor-attributi-compilati.png" alt="Attributs remplis">
-  <img src="../screenshots/fr/21-scheda-con-attributi.png" alt="Fiche avec attributs">
+  <img class="ios" src="../screenshots/fr/19-editor-con-attributi.png" alt="Éditeur avec attributs">
+  <img class="android" src="../screenshots/android-fr/19-editor-con-attributi.png" alt="Éditeur avec attributs">
+  <img class="ios" src="../screenshots/fr/20-editor-attributi-compilati.png" alt="Attributs remplis">
+  <img class="android" src="../screenshots/android-fr/20-editor-attributi-compilati.png" alt="Attributs remplis">
+  <img class="ios" src="../screenshots/fr/21-scheda-con-attributi.png" alt="Fiche avec attributs">
+  <img class="android" src="../screenshots/android-fr/21-scheda-con-attributi.png" alt="Fiche avec attributs">
 </div>
 
 <p>Les attributs définis apparaissent en bas de l'éditeur de <strong>chaque</strong> contact de ce répertoire, avec le contrôle adapté au type. Les valeurs remplies sont visibles dans la fiche.</p>
@@ -207,7 +244,8 @@
 <h3 id="6-1">6.1 Le menu administratif</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/fr/23-menu-amministrazione.png" alt="Menu administratif">
+  <img class="ios" src="../screenshots/fr/23-menu-amministrazione.png" alt="Menu administratif">
+  <img class="android" src="../screenshots/android-fr/23-menu-amministrazione.png" alt="Menu administratif">
 </div>
 
 <p>Il s'ouvre en tapant le <strong>code administratif</strong> dans le champ de recherche du répertoire et en appuyant sur Entrée. Il n'y a aucune autre voie : aucun bouton, aucune entrée de menu, aucun geste secret.</p>
@@ -217,8 +255,10 @@
 <h3 id="6-2">6.2 En créer un</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/fr/24-nuova-rubrica-privata.png" alt="Nouveau répertoire privé">
-  <img src="../screenshots/fr/25-rubrica-privata-creata.png" alt="Répertoire privé créé">
+  <img class="ios" src="../screenshots/fr/24-nuova-rubrica-privata.png" alt="Nouveau répertoire privé">
+  <img class="android" src="../screenshots/android-fr/24-nuova-rubrica-privata.png" alt="Nouveau répertoire privé">
+  <img class="ios" src="../screenshots/fr/25-rubrica-privata-creata.png" alt="Répertoire privé créé">
+  <img class="android" src="../screenshots/android-fr/25-rubrica-privata-creata.png" alt="Répertoire privé créé">
 </div>
 
 <p>Le code que vous choisissez <strong>est</strong> la clé avec laquelle le répertoire est chiffré. Il n'est enregistré nulle part : la clé est dérivée des données stockées, jamais le code lui-même.</p>
@@ -232,8 +272,10 @@
 <h3 id="6-3">6.3 L'ouvrir et l'utiliser</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/fr/26-rubrica-privata-aperta.png" alt="Répertoire privé ouvert">
-  <img src="../screenshots/fr/27-rubrica-privata-con-contatti.png" alt="Répertoire privé avec contacts">
+  <img class="ios" src="../screenshots/fr/26-rubrica-privata-aperta.png" alt="Répertoire privé ouvert">
+  <img class="android" src="../screenshots/android-fr/26-rubrica-privata-aperta.png" alt="Répertoire privé ouvert">
+  <img class="ios" src="../screenshots/fr/27-rubrica-privata-con-contatti.png" alt="Répertoire privé avec contacts">
+  <img class="android" src="../screenshots/android-fr/27-rubrica-privata-con-contatti.png" alt="Répertoire privé avec contacts">
 </div>
 
 <p>Tapez son code dans le champ de recherche et appuyez sur Entrée : le répertoire privé remplace la liste publique. C'est la seule façon.</p>
@@ -251,7 +293,8 @@
 <h3 id="6-4">6.4 Paramètres d'un répertoire privé</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/fr/28-impostazioni-rubrica-privata.png" alt="Paramètres du répertoire privé">
+  <img class="ios" src="../screenshots/fr/28-impostazioni-rubrica-privata.png" alt="Paramètres du répertoire privé">
+  <img class="android" src="../screenshots/android-fr/28-impostazioni-rubrica-privata.png" alt="Paramètres du répertoire privé">
 </div>
 
 <p>Le répertoire <strong>public</strong> a l'importation et pas de politique de contact fantôme ; un répertoire <strong>privé</strong> est exactement l'inverse — pas d'importation, mais avec l'option de gestion du contact fantôme (§7).</p>

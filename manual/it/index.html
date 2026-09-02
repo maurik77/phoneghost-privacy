@@ -29,6 +29,11 @@
   footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0e0e0; font-size: 0.85rem; color: #666; }
   footer a { color: #0066cc; }
   a { color: #0066cc; }
+  .os-toggle { display: flex; gap: 8px; margin: 0 0 1.5rem; align-items: center; }
+  .os-toggle span { font-size: 0.9rem; color: #555; margin-right: 4px; }
+  .os-toggle button { padding: 5px 16px; border: 1px solid #0066cc; border-radius: 20px; background: #fff; color: #0066cc; cursor: pointer; font-size: 0.9rem; }
+  .os-toggle button.active { background: #0066cc; color: #fff; }
+  .screenshots img.android { display: none; }
 </style>
 </head>
 <body>
@@ -43,6 +48,15 @@
   <a href="../pt/">Português</a>
 </nav>
 
+<div class="os-toggle"><span>Schermate:</span><button id="btn-ios" class="active" onclick="setOS('ios')">iOS</button><button id="btn-android" onclick="setOS('android')">Android</button></div>
+<script>
+function setOS(os){
+  document.querySelectorAll('.screenshots img.ios').forEach(function(el){el.style.display=os==='ios'?'':'none';});
+  document.querySelectorAll('.screenshots img.android').forEach(function(el){el.style.display=os==='android'?'':'none';});
+  document.getElementById('btn-ios').classList.toggle('active',os==='ios');
+  document.getElementById('btn-android').classList.toggle('active',os==='android');
+}
+</script>
 <h1>PhoneGhost — Manuale utente</h1>
 
 <nav class="toc">
@@ -73,8 +87,10 @@
 <h3 id="2-1">2.1 La spiegazione</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/it/01-benvenuto.png" alt="Schermata di benvenuto">
-  <img src="../screenshots/it/02-benvenuto-seguito.png" alt="Seguito della spiegazione">
+  <img class="ios" src="../screenshots/it/01-benvenuto.png" alt="Schermata di benvenuto">
+  <img class="android" src="../screenshots/android-it/01-benvenuto.png" alt="Schermata di benvenuto">
+  <img class="ios" src="../screenshots/it/02-benvenuto-seguito.png" alt="Seguito della spiegazione">
+  <img class="android" src="../screenshots/android-it/02-benvenuto-seguito.png" alt="Seguito della spiegazione">
 </div>
 
 <p>È l'unico punto dell'app in cui il meccanismo è raccontato per intero, e i disegni servono a dire senza parole ciò che le parole spiegano male: il codice di una rubrica privata digitato nella ricerca apre <strong>quella rubrica</strong>; il codice amministrativo apre <strong>un menu</strong>, non una rubrica.</p>
@@ -84,8 +100,10 @@
 <h3 id="2-2">2.2 Preparazione dell'archivio cifrato</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/it/03-preparazione-archivio.png" alt="Preparazione al 16%">
-  <img src="../screenshots/it/04-preparazione-archivio-avanzata.png" alt="Preparazione al 61%">
+  <img class="ios" src="../screenshots/it/03-preparazione-archivio.png" alt="Preparazione al 16%">
+  <img class="android" src="../screenshots/android-it/03-preparazione-archivio.png" alt="Preparazione al 16%">
+  <img class="ios" src="../screenshots/it/04-preparazione-archivio-avanzata.png" alt="Preparazione al 61%">
+  <img class="android" src="../screenshots/android-it/04-preparazione-archivio-avanzata.png" alt="Preparazione al 61%">
 </div>
 
 <p>L'app scrive qui lo spazio che ospiterà le rubriche private — <strong>sempre lo stesso</strong>, che tu ne crei una, dieci o nessuna. È per questo che l'attesa non dice nulla su di te: la barra si muove identica in ogni installazione.</p>
@@ -95,8 +113,10 @@
 <h3 id="2-3">2.3 Il codice amministrativo</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/it/05-codice-amministrativo.png" alt="Scelta del codice amministrativo">
-  <img src="../screenshots/it/06-codice-amministrativo-impostato.png" alt="Conferma del codice amministrativo">
+  <img class="ios" src="../screenshots/it/05-codice-amministrativo.png" alt="Scelta del codice amministrativo">
+  <img class="android" src="../screenshots/android-it/05-codice-amministrativo.png" alt="Scelta del codice amministrativo">
+  <img class="ios" src="../screenshots/it/06-codice-amministrativo-impostato.png" alt="Conferma del codice amministrativo">
+  <img class="android" src="../screenshots/android-it/06-codice-amministrativo-impostato.png" alt="Conferma del codice amministrativo">
 </div>
 
 <p>Almeno 8 caratteri, con almeno una lettera e una cifra.</p>
@@ -110,9 +130,12 @@
 <h2 id="3">3. La rubrica pubblica</h2>
 
 <div class="screenshots">
-  <img src="../screenshots/it/07-rubrica-vuota.png" alt="Rubrica vuota">
-  <img src="../screenshots/it/10-lista-contatti.png" alt="Lista contatti">
-  <img src="../screenshots/it/11-scheda-contatto.png" alt="Scheda contatto">
+  <img class="ios" src="../screenshots/it/07-rubrica-vuota.png" alt="Rubrica vuota">
+  <img class="android" src="../screenshots/android-it/07-rubrica-vuota.png" alt="Rubrica vuota">
+  <img class="ios" src="../screenshots/it/10-lista-contatti.png" alt="Lista contatti">
+  <img class="android" src="../screenshots/android-it/10-lista-contatti.png" alt="Lista contatti">
+  <img class="ios" src="../screenshots/it/11-scheda-contatto.png" alt="Scheda contatto">
+  <img class="android" src="../screenshots/android-it/11-scheda-contatto.png" alt="Scheda contatto">
 </div>
 
 <p>Una rubrica ordinaria: lista ordinata alfabeticamente con le lettere di sezione, avatar con le iniziali (il colore deriva dal nome, non è casuale né scelto a mano), ricerca, scheda, modifica, eliminazione.</p>
@@ -124,8 +147,10 @@
 <h3 id="3-1">3.1 Creare e modificare un contatto</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/it/08-nuovo-contatto.png" alt="Editor vuoto">
-  <img src="../screenshots/it/09-nuovo-contatto-compilato.png" alt="Editor compilato">
+  <img class="ios" src="../screenshots/it/08-nuovo-contatto.png" alt="Editor vuoto">
+  <img class="android" src="../screenshots/android-it/08-nuovo-contatto.png" alt="Editor vuoto">
+  <img class="ios" src="../screenshots/it/09-nuovo-contatto-compilato.png" alt="Editor compilato">
+  <img class="android" src="../screenshots/android-it/09-nuovo-contatto-compilato.png" alt="Editor compilato">
 </div>
 
 <p>Nome, cognome, azienda, ruolo, <strong>più numeri di telefono</strong> e <strong>più indirizzi email</strong>, ciascuno con la propria etichetta (cellulare, casa, lavoro, o un'etichetta tua). «Aggiungi numero» e «Aggiungi email» creano una riga in più.</p>
@@ -139,8 +164,10 @@
 <h2 id="4">4. Importare dalla rubrica del telefono</h2>
 
 <div class="screenshots">
-  <img src="../screenshots/it/07-rubrica-vuota.png" alt="Invito all'import sulla rubrica vuota">
-  <img src="../screenshots/it/12-impostazioni.png" alt="Import nelle impostazioni">
+  <img class="ios" src="../screenshots/it/07-rubrica-vuota.png" alt="Invito all'import sulla rubrica vuota">
+  <img class="android" src="../screenshots/android-it/07-rubrica-vuota.png" alt="Invito all'import sulla rubrica vuota">
+  <img class="ios" src="../screenshots/it/12-impostazioni.png" alt="Import nelle impostazioni">
+  <img class="android" src="../screenshots/android-it/12-impostazioni.png" alt="Import nelle impostazioni">
 </div>
 
 <p>L'import vive in <strong>due punti</strong>, che rispondono a due bisogni diversi:</p>
@@ -170,11 +197,16 @@
 <h3 id="5-1">5.1 Definirli</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/it/13-attributi-nessuno.png" alt="Nessun attributo">
-  <img src="../screenshots/it/14-nuovo-attributo.png" alt="Nuovo attributo">
-  <img src="../screenshots/it/15-nuovo-attributo-nome.png" alt="Nome dell'attributo">
-  <img src="../screenshots/it/16-tipi-di-attributo.png" alt="I quattro tipi">
-  <img src="../screenshots/it/17-attributi-definiti.png" alt="Due attributi definiti">
+  <img class="ios" src="../screenshots/it/13-attributi-nessuno.png" alt="Nessun attributo">
+  <img class="android" src="../screenshots/android-it/13-attributi-nessuno.png" alt="Nessun attributo">
+  <img class="ios" src="../screenshots/it/14-nuovo-attributo.png" alt="Nuovo attributo">
+  <img class="android" src="../screenshots/android-it/14-nuovo-attributo.png" alt="Nuovo attributo">
+  <img class="ios" src="../screenshots/it/15-nuovo-attributo-nome.png" alt="Nome dell'attributo">
+  <img class="android" src="../screenshots/android-it/15-nuovo-attributo-nome.png" alt="Nome dell'attributo">
+  <img class="ios" src="../screenshots/it/16-tipi-di-attributo.png" alt="I quattro tipi">
+  <img class="android" src="../screenshots/android-it/16-tipi-di-attributo.png" alt="I quattro tipi">
+  <img class="ios" src="../screenshots/it/17-attributi-definiti.png" alt="Due attributi definiti">
+  <img class="android" src="../screenshots/android-it/17-attributi-definiti.png" alt="Due attributi definiti">
 </div>
 
 <p>Quattro tipi: <strong>Testo</strong> (fino a 200 caratteri), <strong>Testo lungo</strong>, <strong>Voto 1-5</strong> (stelle) e <strong>Data</strong>.</p>
@@ -184,8 +216,10 @@
 <h3 id="5-2">5.2 Sceglierne uno da mostrare in lista</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/it/18-scelta-del-sottotitolo.png" alt="Scelta del sottotitolo">
-  <img src="../screenshots/it/22-lista-con-sottotitolo.png" alt="Lista con sottotitolo">
+  <img class="ios" src="../screenshots/it/18-scelta-del-sottotitolo.png" alt="Scelta del sottotitolo">
+  <img class="android" src="../screenshots/android-it/18-scelta-del-sottotitolo.png" alt="Scelta del sottotitolo">
+  <img class="ios" src="../screenshots/it/22-lista-con-sottotitolo.png" alt="Lista con sottotitolo">
+  <img class="android" src="../screenshots/android-it/22-lista-con-sottotitolo.png" alt="Lista con sottotitolo">
 </div>
 
 <p>Un attributo — uno solo — può diventare il <strong>sottotitolo</strong> delle righe della rubrica. Serve a rendere la lista leggibile quando i nomi non bastano a distinguere le persone.</p>
@@ -193,9 +227,12 @@
 <h3 id="5-3">5.3 Compilarli e vederli</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/it/19-editor-con-attributi.png" alt="Editor con attributi">
-  <img src="../screenshots/it/20-editor-attributi-compilati.png" alt="Attributi compilati">
-  <img src="../screenshots/it/21-scheda-con-attributi.png" alt="Scheda con attributi">
+  <img class="ios" src="../screenshots/it/19-editor-con-attributi.png" alt="Editor con attributi">
+  <img class="android" src="../screenshots/android-it/19-editor-con-attributi.png" alt="Editor con attributi">
+  <img class="ios" src="../screenshots/it/20-editor-attributi-compilati.png" alt="Attributi compilati">
+  <img class="android" src="../screenshots/android-it/20-editor-attributi-compilati.png" alt="Attributi compilati">
+  <img class="ios" src="../screenshots/it/21-scheda-con-attributi.png" alt="Scheda con attributi">
+  <img class="android" src="../screenshots/android-it/21-scheda-con-attributi.png" alt="Scheda con attributi">
 </div>
 
 <p>Gli attributi definiti compaiono in fondo all'editor di <strong>ogni</strong> contatto di quella rubrica, con il controllo adatto al tipo. I valori compilati si leggono nella scheda.</p>
@@ -207,7 +244,8 @@
 <h3 id="6-1">6.1 Il menu amministrativo</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/it/23-menu-amministrazione.png" alt="Menu amministrazione">
+  <img class="ios" src="../screenshots/it/23-menu-amministrazione.png" alt="Menu amministrazione">
+  <img class="android" src="../screenshots/android-it/23-menu-amministrazione.png" alt="Menu amministrazione">
 </div>
 
 <p>Si apre digitando il <strong>codice amministrativo</strong> nel campo di ricerca della rubrica e premendo invio. Non c'è nessun'altra via: nessun pulsante, nessuna voce di menu, nessuna gesture segreta.</p>
@@ -217,8 +255,10 @@
 <h3 id="6-2">6.2 Crearne una</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/it/24-nuova-rubrica-privata.png" alt="Nuova rubrica privata">
-  <img src="../screenshots/it/25-rubrica-privata-creata.png" alt="Rubrica privata creata">
+  <img class="ios" src="../screenshots/it/24-nuova-rubrica-privata.png" alt="Nuova rubrica privata">
+  <img class="android" src="../screenshots/android-it/24-nuova-rubrica-privata.png" alt="Nuova rubrica privata">
+  <img class="ios" src="../screenshots/it/25-rubrica-privata-creata.png" alt="Rubrica privata creata">
+  <img class="android" src="../screenshots/android-it/25-rubrica-privata-creata.png" alt="Rubrica privata creata">
 </div>
 
 <p>Il codice che scegli <strong>è</strong> la chiave con cui la rubrica viene cifrata. Non viene salvato da nessuna parte: dallo spazio su disco si ricava la chiave, mai il codice.</p>
@@ -232,8 +272,10 @@
 <h3 id="6-3">6.3 Aprirla e usarla</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/it/26-rubrica-privata-aperta.png" alt="Rubrica privata aperta">
-  <img src="../screenshots/it/27-rubrica-privata-con-contatti.png" alt="Rubrica privata con contatti">
+  <img class="ios" src="../screenshots/it/26-rubrica-privata-aperta.png" alt="Rubrica privata aperta">
+  <img class="android" src="../screenshots/android-it/26-rubrica-privata-aperta.png" alt="Rubrica privata aperta">
+  <img class="ios" src="../screenshots/it/27-rubrica-privata-con-contatti.png" alt="Rubrica privata con contatti">
+  <img class="android" src="../screenshots/android-it/27-rubrica-privata-con-contatti.png" alt="Rubrica privata con contatti">
 </div>
 
 <p>Si digita il suo codice nel campo di ricerca e si preme invio: la rubrica privata prende il posto della lista pubblica. È l'unico modo.</p>
@@ -251,7 +293,8 @@
 <h3 id="6-4">6.4 Le impostazioni di una rubrica privata</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/it/28-impostazioni-rubrica-privata.png" alt="Impostazioni rubrica privata">
+  <img class="ios" src="../screenshots/it/28-impostazioni-rubrica-privata.png" alt="Impostazioni rubrica privata">
+  <img class="android" src="../screenshots/android-it/28-impostazioni-rubrica-privata.png" alt="Impostazioni rubrica privata">
 </div>
 
 <p>Nella rubrica <strong>pubblica</strong> c'è l'import e non c'è la policy contatto-ombra; in una rubrica <strong>privata</strong> è l'esatto contrario — niente import, e in più la voce per la gestione del contatto-ombra (§7).</p>

@@ -29,6 +29,11 @@
   footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #e0e0e0; font-size: 0.85rem; color: #666; }
   footer a { color: #0066cc; }
   a { color: #0066cc; }
+  .os-toggle { display: flex; gap: 8px; margin: 0 0 1.5rem; align-items: center; }
+  .os-toggle span { font-size: 0.9rem; color: #555; margin-right: 4px; }
+  .os-toggle button { padding: 5px 16px; border: 1px solid #0066cc; border-radius: 20px; background: #fff; color: #0066cc; cursor: pointer; font-size: 0.9rem; }
+  .os-toggle button.active { background: #0066cc; color: #fff; }
+  .screenshots img.android { display: none; }
 </style>
 </head>
 <body>
@@ -43,6 +48,15 @@
   <a href="../pt/">Português</a>
 </nav>
 
+<div class="os-toggle"><span>Screenshots:</span><button id="btn-ios" class="active" onclick="setOS('ios')">iOS</button><button id="btn-android" onclick="setOS('android')">Android</button></div>
+<script>
+function setOS(os){
+  document.querySelectorAll('.screenshots img.ios').forEach(function(el){el.style.display=os==='ios'?'':'none';});
+  document.querySelectorAll('.screenshots img.android').forEach(function(el){el.style.display=os==='android'?'':'none';});
+  document.getElementById('btn-ios').classList.toggle('active',os==='ios');
+  document.getElementById('btn-android').classList.toggle('active',os==='android');
+}
+</script>
 <h1>PhoneGhost — Benutzerhandbuch</h1>
 
 <nav class="toc">
@@ -73,8 +87,10 @@
 <h3 id="2-1">2.1 Die Erklärung</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/de/01-benvenuto.png" alt="Willkommensbildschirm">
-  <img src="../screenshots/de/02-benvenuto-seguito.png" alt="Erklärung (Fortsetzung)">
+  <img class="ios" src="../screenshots/de/01-benvenuto.png" alt="Willkommensbildschirm">
+  <img class="android" src="../screenshots/android-de/01-benvenuto.png" alt="Willkommensbildschirm">
+  <img class="ios" src="../screenshots/de/02-benvenuto-seguito.png" alt="Erklärung (Fortsetzung)">
+  <img class="android" src="../screenshots/android-de/02-benvenuto-seguito.png" alt="Erklärung (Fortsetzung)">
 </div>
 
 <p>Dies ist der einzige Punkt in der App, an dem der Mechanismus vollständig erklärt wird. Die Illustrationen sagen ohne Worte, was Worte schlecht erklären: Der Code eines privaten Adressbuchs, in das Suchfeld eingegeben, öffnet <strong>dieses Adressbuch</strong>; der Verwaltungscode öffnet <strong>ein Menü</strong>, kein Adressbuch.</p>
@@ -84,8 +100,10 @@
 <h3 id="2-2">2.2 Vorbereitung des verschlüsselten Archivs</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/de/03-preparazione-archivio.png" alt="Vorbereitung bei 16 %">
-  <img src="../screenshots/de/04-preparazione-archivio-avanzata.png" alt="Vorbereitung bei 61 %">
+  <img class="ios" src="../screenshots/de/03-preparazione-archivio.png" alt="Vorbereitung bei 16 %">
+  <img class="android" src="../screenshots/android-de/03-preparazione-archivio.png" alt="Vorbereitung bei 16 %">
+  <img class="ios" src="../screenshots/de/04-preparazione-archivio-avanzata.png" alt="Vorbereitung bei 61 %">
+  <img class="android" src="../screenshots/android-de/04-preparazione-archivio-avanzata.png" alt="Vorbereitung bei 61 %">
 </div>
 
 <p>Die App schreibt hier den Speicherplatz, der die privaten Adressbücher aufnehmen wird — <strong>immer die gleiche Menge</strong>, egal ob Sie eines, zehn oder keines erstellen. Deshalb verrät das Warten nichts über Sie: Der Fortschrittsbalken bewegt sich bei jeder Installation identisch.</p>
@@ -95,8 +113,10 @@
 <h3 id="2-3">2.3 Der Verwaltungscode</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/de/05-codice-amministrativo.png" alt="Auswahl des Verwaltungscodes">
-  <img src="../screenshots/de/06-codice-amministrativo-impostato.png" alt="Bestätigung des Verwaltungscodes">
+  <img class="ios" src="../screenshots/de/05-codice-amministrativo.png" alt="Auswahl des Verwaltungscodes">
+  <img class="android" src="../screenshots/android-de/05-codice-amministrativo.png" alt="Auswahl des Verwaltungscodes">
+  <img class="ios" src="../screenshots/de/06-codice-amministrativo-impostato.png" alt="Bestätigung des Verwaltungscodes">
+  <img class="android" src="../screenshots/android-de/06-codice-amministrativo-impostato.png" alt="Bestätigung des Verwaltungscodes">
 </div>
 
 <p>Mindestens 8 Zeichen, mit mindestens einem Buchstaben und einer Ziffer.</p>
@@ -110,9 +130,12 @@
 <h2 id="3">3. Das öffentliche Adressbuch</h2>
 
 <div class="screenshots">
-  <img src="../screenshots/de/07-rubrica-vuota.png" alt="Leeres Adressbuch">
-  <img src="../screenshots/de/10-lista-contatti.png" alt="Kontaktliste">
-  <img src="../screenshots/de/11-scheda-contatto.png" alt="Kontaktkarte">
+  <img class="ios" src="../screenshots/de/07-rubrica-vuota.png" alt="Leeres Adressbuch">
+  <img class="android" src="../screenshots/android-de/07-rubrica-vuota.png" alt="Leeres Adressbuch">
+  <img class="ios" src="../screenshots/de/10-lista-contatti.png" alt="Kontaktliste">
+  <img class="android" src="../screenshots/android-de/10-lista-contatti.png" alt="Kontaktliste">
+  <img class="ios" src="../screenshots/de/11-scheda-contatto.png" alt="Kontaktkarte">
+  <img class="android" src="../screenshots/android-de/11-scheda-contatto.png" alt="Kontaktkarte">
 </div>
 
 <p>Ein gewöhnliches Adressbuch: alphabetisch sortierte Liste mit Abschnittsbuchstaben, Initialien-Avatar (Farbe aus dem Namen abgeleitet, weder zufällig noch manuell gewählt), Suche, Kontaktkarte, Bearbeiten, Löschen.</p>
@@ -124,8 +147,10 @@
 <h3 id="3-1">3.1 Einen Kontakt erstellen und bearbeiten</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/de/08-nuovo-contatto.png" alt="Leerer Editor">
-  <img src="../screenshots/de/09-nuovo-contatto-compilato.png" alt="Ausgefüllter Editor">
+  <img class="ios" src="../screenshots/de/08-nuovo-contatto.png" alt="Leerer Editor">
+  <img class="android" src="../screenshots/android-de/08-nuovo-contatto.png" alt="Leerer Editor">
+  <img class="ios" src="../screenshots/de/09-nuovo-contatto-compilato.png" alt="Ausgefüllter Editor">
+  <img class="android" src="../screenshots/android-de/09-nuovo-contatto-compilato.png" alt="Ausgefüllter Editor">
 </div>
 
 <p>Vorname, Nachname, Unternehmen, Funktion, <strong>mehrere Telefonnummern</strong> und <strong>mehrere E-Mail-Adressen</strong>, jeweils mit eigenem Label (Mobil, Zuhause, Arbeit oder ein benutzerdefiniertes). „Nummer hinzufügen" und „E-Mail hinzufügen" erstellen eine zusätzliche Zeile.</p>
@@ -139,8 +164,10 @@
 <h2 id="4">4. Aus dem Telefonbuch importieren</h2>
 
 <div class="screenshots">
-  <img src="../screenshots/de/07-rubrica-vuota.png" alt="Importaufforderung auf leerem Adressbuch">
-  <img src="../screenshots/de/12-impostazioni.png" alt="Import in den Einstellungen">
+  <img class="ios" src="../screenshots/de/07-rubrica-vuota.png" alt="Importaufforderung auf leerem Adressbuch">
+  <img class="android" src="../screenshots/android-de/07-rubrica-vuota.png" alt="Importaufforderung auf leerem Adressbuch">
+  <img class="ios" src="../screenshots/de/12-impostazioni.png" alt="Import in den Einstellungen">
+  <img class="android" src="../screenshots/android-de/12-impostazioni.png" alt="Import in den Einstellungen">
 </div>
 
 <p>Der Import gibt es an <strong>zwei Stellen</strong>, die auf unterschiedliche Bedürfnisse eingehen:</p>
@@ -170,11 +197,16 @@
 <h3 id="5-1">5.1 Definieren</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/de/13-attributi-nessuno.png" alt="Keine Attribute">
-  <img src="../screenshots/de/14-nuovo-attributo.png" alt="Neues Attribut">
-  <img src="../screenshots/de/15-nuovo-attributo-nome.png" alt="Attributname">
-  <img src="../screenshots/de/16-tipi-di-attributo.png" alt="Die vier Typen">
-  <img src="../screenshots/de/17-attributi-definiti.png" alt="Zwei definierte Attribute">
+  <img class="ios" src="../screenshots/de/13-attributi-nessuno.png" alt="Keine Attribute">
+  <img class="android" src="../screenshots/android-de/13-attributi-nessuno.png" alt="Keine Attribute">
+  <img class="ios" src="../screenshots/de/14-nuovo-attributo.png" alt="Neues Attribut">
+  <img class="android" src="../screenshots/android-de/14-nuovo-attributo.png" alt="Neues Attribut">
+  <img class="ios" src="../screenshots/de/15-nuovo-attributo-nome.png" alt="Attributname">
+  <img class="android" src="../screenshots/android-de/15-nuovo-attributo-nome.png" alt="Attributname">
+  <img class="ios" src="../screenshots/de/16-tipi-di-attributo.png" alt="Die vier Typen">
+  <img class="android" src="../screenshots/android-de/16-tipi-di-attributo.png" alt="Die vier Typen">
+  <img class="ios" src="../screenshots/de/17-attributi-definiti.png" alt="Zwei definierte Attribute">
+  <img class="android" src="../screenshots/android-de/17-attributi-definiti.png" alt="Zwei definierte Attribute">
 </div>
 
 <p>Vier Typen: <strong>Text</strong> (bis zu 200 Zeichen), <strong>Langer Text</strong>, <strong>Bewertung 1–5</strong> (Sterne) und <strong>Datum</strong>.</p>
@@ -184,8 +216,10 @@
 <h3 id="5-2">5.2 Eines für die Listenanzeige auswählen</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/de/18-scelta-del-sottotitolo.png" alt="Untertitelauswahl">
-  <img src="../screenshots/de/22-lista-con-sottotitolo.png" alt="Liste mit Untertitel">
+  <img class="ios" src="../screenshots/de/18-scelta-del-sottotitolo.png" alt="Untertitelauswahl">
+  <img class="android" src="../screenshots/android-de/18-scelta-del-sottotitolo.png" alt="Untertitelauswahl">
+  <img class="ios" src="../screenshots/de/22-lista-con-sottotitolo.png" alt="Liste mit Untertitel">
+  <img class="android" src="../screenshots/android-de/22-lista-con-sottotitolo.png" alt="Liste mit Untertitel">
 </div>
 
 <p>Ein Attribut — nur eines — kann zum <strong>Untertitel</strong> der Listenzeilen werden. Das macht die Liste lesbar, wenn Namen allein nicht ausreichen, um Personen zu unterscheiden.</p>
@@ -193,9 +227,12 @@
 <h3 id="5-3">5.3 Ausfüllen und ansehen</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/de/19-editor-con-attributi.png" alt="Editor mit Attributen">
-  <img src="../screenshots/de/20-editor-attributi-compilati.png" alt="Ausgefüllte Attribute">
-  <img src="../screenshots/de/21-scheda-con-attributi.png" alt="Karte mit Attributen">
+  <img class="ios" src="../screenshots/de/19-editor-con-attributi.png" alt="Editor mit Attributen">
+  <img class="android" src="../screenshots/android-de/19-editor-con-attributi.png" alt="Editor mit Attributen">
+  <img class="ios" src="../screenshots/de/20-editor-attributi-compilati.png" alt="Ausgefüllte Attribute">
+  <img class="android" src="../screenshots/android-de/20-editor-attributi-compilati.png" alt="Ausgefüllte Attribute">
+  <img class="ios" src="../screenshots/de/21-scheda-con-attributi.png" alt="Karte mit Attributen">
+  <img class="android" src="../screenshots/android-de/21-scheda-con-attributi.png" alt="Karte mit Attributen">
 </div>
 
 <p>Definierte Attribute erscheinen am Ende des Editors <strong>jedes</strong> Kontakts in diesem Adressbuch, mit dem für den Typ geeigneten Steuerelement. Ausgefüllte Werte sind in der Kontaktkarte sichtbar.</p>
@@ -207,7 +244,8 @@
 <h3 id="6-1">6.1 Das Verwaltungsmenü</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/de/23-menu-amministrazione.png" alt="Verwaltungsmenü">
+  <img class="ios" src="../screenshots/de/23-menu-amministrazione.png" alt="Verwaltungsmenü">
+  <img class="android" src="../screenshots/android-de/23-menu-amministrazione.png" alt="Verwaltungsmenü">
 </div>
 
 <p>Es öffnet sich durch Eingabe des <strong>Verwaltungscodes</strong> in das Suchfeld des Adressbuchs und Drücken der Eingabetaste. Es gibt keinen anderen Weg: keinen Knopf, keinen Menüeintrag, keine geheime Geste.</p>
@@ -217,8 +255,10 @@
 <h3 id="6-2">6.2 Eines erstellen</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/de/24-nuova-rubrica-privata.png" alt="Neues privates Adressbuch">
-  <img src="../screenshots/de/25-rubrica-privata-creata.png" alt="Privates Adressbuch erstellt">
+  <img class="ios" src="../screenshots/de/24-nuova-rubrica-privata.png" alt="Neues privates Adressbuch">
+  <img class="android" src="../screenshots/android-de/24-nuova-rubrica-privata.png" alt="Neues privates Adressbuch">
+  <img class="ios" src="../screenshots/de/25-rubrica-privata-creata.png" alt="Privates Adressbuch erstellt">
+  <img class="android" src="../screenshots/android-de/25-rubrica-privata-creata.png" alt="Privates Adressbuch erstellt">
 </div>
 
 <p>Der von Ihnen gewählte Code <strong>ist</strong> der Schlüssel, mit dem das Adressbuch verschlüsselt wird. Er wird nirgendwo gespeichert: Der Schlüssel wird aus den gespeicherten Daten abgeleitet, niemals der Code selbst.</p>
@@ -232,8 +272,10 @@
 <h3 id="6-3">6.3 Öffnen und verwenden</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/de/26-rubrica-privata-aperta.png" alt="Privates Adressbuch geöffnet">
-  <img src="../screenshots/de/27-rubrica-privata-con-contatti.png" alt="Privates Adressbuch mit Kontakten">
+  <img class="ios" src="../screenshots/de/26-rubrica-privata-aperta.png" alt="Privates Adressbuch geöffnet">
+  <img class="android" src="../screenshots/android-de/26-rubrica-privata-aperta.png" alt="Privates Adressbuch geöffnet">
+  <img class="ios" src="../screenshots/de/27-rubrica-privata-con-contatti.png" alt="Privates Adressbuch mit Kontakten">
+  <img class="android" src="../screenshots/android-de/27-rubrica-privata-con-contatti.png" alt="Privates Adressbuch mit Kontakten">
 </div>
 
 <p>Tippen Sie seinen Code in das Suchfeld und drücken Sie die Eingabetaste: Ein privates Adressbuch ersetzt die öffentliche Liste. Das ist der einzige Weg.</p>
@@ -251,7 +293,8 @@
 <h3 id="6-4">6.4 Einstellungen eines privaten Adressbuchs</h3>
 
 <div class="screenshots">
-  <img src="../screenshots/de/28-impostazioni-rubrica-privata.png" alt="Einstellungen des privaten Adressbuchs">
+  <img class="ios" src="../screenshots/de/28-impostazioni-rubrica-privata.png" alt="Einstellungen des privaten Adressbuchs">
+  <img class="android" src="../screenshots/android-de/28-impostazioni-rubrica-privata.png" alt="Einstellungen des privaten Adressbuchs">
 </div>
 
 <p>Das <strong>öffentliche</strong> Adressbuch hat Import und keine Ghost-Kontakt-Richtlinie; ein <strong>privates</strong> Adressbuch ist genau umgekehrt — kein Import, aber mit der Ghost-Kontakt-Verwaltungsoption (§7).</p>

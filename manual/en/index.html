@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <link rel="icon" type="image/png" href="../../favicon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PhoneGhost — User Manual</title>
+<title>Nomira — User Manual</title>
 <style>
   body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 800px; margin: 0 auto; padding: 1.5rem; color: #1a1a1a; background: #fff; line-height: 1.6; }
   nav.langs { margin-bottom: 2rem; padding: 0.75rem 1rem; background: #f5f5f5; border-radius: 6px; font-size: 0.9rem; }
@@ -58,7 +58,7 @@ function setOS(os){
   document.getElementById('btn-android').classList.toggle('active',os==='android');
 }
 </script>
-<h1>PhoneGhost — User Manual</h1>
+<h1>Nomira — User Manual</h1>
 
 <nav class="toc">
   <strong>Contents</strong>
@@ -77,7 +77,7 @@ function setOS(os){
 
 <h2 id="1">1. What it is</h2>
 
-<p>PhoneGhost is a <strong>second address book</strong>, separate from the phone's own, that can also host one or more <strong>encrypted private address books</strong>, each protected by a code you choose.</p>
+<p>Nomira is a <strong>second address book</strong>, separate from the phone's own, that can also host one or more <strong>encrypted private address books</strong>, each protected by a code you choose.</p>
 
 <p>Private address books are not a hidden feature: the app declares them openly, at first launch and in the store listings. What is hidden is <strong>how many exist and whether any exist at all</strong> — and this is not a presentational detail but the principle on which everything else is built. There is no list, no counter, no icon that lights up. Not even for you.</p>
 
@@ -185,7 +185,7 @@ function setOS(os){
 
 <p>Number takes priority over name intentionally: two different people can share the same name, and the opposite rule would silently delete one of them.</p>
 
-<p><strong>Skips, does not update.</strong> An already-present contact is not overwritten with phone data: changes made inside PhoneGhost — labels, custom attributes, aliases — remain yours. The accepted consequence is that if you change someone's number <em>on the phone</em>, a new import adds them as a new contact instead of updating the existing one.</p>
+<p><strong>Skips, does not update.</strong> An already-present contact is not overwritten with phone data: changes made inside Nomira — labels, custom attributes, aliases — remain yours. The accepted consequence is that if you change someone's number <em>on the phone</em>, a new import adds them as a new contact instead of updating the existing one.</p>
 
 <p>At the end of an import the app <strong>always</strong> reports what happened, even when there was nothing to do ("No new contacts to import"), because an import that finds nothing and one that never started would otherwise look identical.</p>
 
@@ -302,7 +302,7 @@ function setOS(os){
 
 <h2 id="7">7. Calls and ghost contacts</h2>
 
-<p>When you call a contact from a private address book, their name does not exist as far as the system is concerned — it would appear as a bare number in Recents. PhoneGhost therefore creates, a moment before dialling, a <strong>ghost contact</strong> in the system address book with the alias you chose, so the call log shows a name.</p>
+<p>When you call a contact from a private address book, their name does not exist as far as the system is concerned — it would appear as a bare number in Recents. Nomira therefore creates, a moment before dialling, a <strong>ghost contact</strong> in the system address book with the alias you chose, so the call log shows a name.</p>
 
 <p>The <strong>alias</strong> is set in the contact editor, and the field appears <strong>only inside a private address book</strong>: in the public directory it makes no sense, because those contacts are not private.</p>
 

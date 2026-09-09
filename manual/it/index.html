@@ -53,7 +53,7 @@
 <script>
 function setOS(os){
   document.querySelectorAll('.screenshots img.ios').forEach(function(el){el.style.display=os==='ios'?'':'none';});
-  document.querySelectorAll('.screenshots img.android').forEach(function(el){el.style.display=os==='android'?'':'none';});
+  document.querySelectorAll('.screenshots img.android').forEach(function(el){el.style.display=os==='android'?'inline-block':'none';});
   document.getElementById('btn-ios').classList.toggle('active',os==='ios');
   document.getElementById('btn-android').classList.toggle('active',os==='android');
 }

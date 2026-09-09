@@ -19,15 +19,36 @@
 <body>
 
 <nav>
-  <strong>Language / Lingua:</strong><br>
+  <strong id="nav-label">Language / Lingua:</strong><br>
   <a href="#it">Italiano</a>
   <a href="#en">English</a>
   <a href="#es">Español</a>
   <a href="#fr">Français</a>
   <a href="#de">Deutsch</a>
   <a href="#pt">Português</a>
-  &nbsp;·&nbsp; <a href="manual/">Manuale / User Manual</a>
+  &nbsp;·&nbsp; <a id="manual-link" href="manual/">Manuale / User Manual</a>
 </nav>
+<script>
+var L = {
+  it: { nav: 'Lingua:', manual: 'Manuale' },
+  en: { nav: 'Language:', manual: 'User Manual' },
+  es: { nav: 'Idioma:', manual: 'Manual' },
+  fr: { nav: 'Langue :', manual: 'Manuel' },
+  de: { nav: 'Sprache:', manual: 'Handbuch' },
+  pt: { nav: 'Idioma:', manual: 'Manual' }
+};
+function updateNav() {
+  var lang = location.hash.replace('#', '');
+  var t = L[lang];
+  if (!t) return;
+  document.getElementById('nav-label').textContent = t.nav;
+  var a = document.getElementById('manual-link');
+  a.href = 'manual/' + lang + '/';
+  a.textContent = t.manual;
+}
+window.addEventListener('hashchange', updateNav);
+updateNav();
+</script>
 
 <!-- ══════════════════════════════ ITALIANO ══════════════════════════════ -->
 <section id="it" lang="it">
